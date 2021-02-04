@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>김군화넷</title>
+  <link rel = "stylesheet" href = "/Stylesheet/header.css"/>
+
+  <style>
+      * {border:0; margin:0; padding:0;}
+        header {height:88px; border-bottom:1px solid #145A04;}
+        .wrap {width:1440px; margin:0 auto;}
+
+        h1 {
+            float:left;
+            padding-right:60px;
+            clear:both;
+        }
+        h1 span {
+            color:#145A04; 
+            font-weight:bold;
+            font-size:30px;
+        }
+        h1 a { 
+            text-decoration:none; 
+            margin-top:-30px;
+        }
+        .menu01 {
+            float:left; 
+            list-style:none;
+        }
+        .menu01 li {            
+            float:left; 
+            padding: 33px 20px;
+        }
+        .menu01 li:hover {border-bottom:3px solid #145A04;}
+        .menu01 a { 
+            color:#000;
+            text-decoration:none;
+            font-weight:bold;
+        }
+        .menu01 a:hover { color:#145A04; }
+        .topbtn {
+            float:right;
+        }
+        #btnLogin a {
+            background:#fff;
+            color:#145A04;
+            padding:15px 20px;
+        }
+        #btnJoin a {
+            background:#145A04;
+            color:#fff;
+            padding:15px 20px;
+        }
+        #btnLogin {
+            margin:auto;
+            border:none; 
+            background-color:#fff;
+            margin-top:35x;
+        }
+        #btnJoin {
+            margin:auto;
+            border:none; 
+            background-color:#145A04;
+            margin-top:35px;
+        }
+  </style>
+</head>
+<link rel = "stylesheet" href = "../Stylesheet/header.css"/>
+<body>
+    <header>
+        <div class="wrap">
+            <h1>
+                <a href="main.ejs" target="" title="">
+                    <span>김이병</br>닷컴.</span>
+                </a>
+            </h1>
+            
+            <ul class="menu01">
+                <li><a href="#" target="" title="">탐색</a></li>
+                <li><a href="#" target="" title="">사단리뷰</a></li>
+                <li><a href="#" target="" title="">주변생활</a></li>
+                <li><a href="#" target="" title="">궁금해요</a></li>
+            </ul>
+
+            <div class="topbtn">
+                <button type="button" id="btnLogin">
+                    <a href="login.ejs" target="" title=""><span>로그인</span></a>
+                </button>
+
+                <button type="button" id="btnJoin">
+                    <a href="#" target="" title=""><span>회원가입</span></a>
+                </button>
+            </div>
+
+            <div class="area-dept01"></div>
+        </div>
+    </header>
+</body>
