@@ -26,6 +26,13 @@ router.get('/review',(req,res,next) => {
   next();
 });
 
+// localhost:3000/login
+router.get('/community',(req,res,next) => {
+  res.render('community.ejs');
+  next();
+});
+
+
 app.use('/',router);
 
 app.listen(port,() => console.log('Example app listening at http://localhost:'+port))
