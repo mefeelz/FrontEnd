@@ -7,6 +7,7 @@ const port = 3000;
 
 app.set('views','views'); // 정적 파일 위치 지정
 app.set('view engine','ejs'); // 템플릿 엔진 세팅
+app.use(express.static('statics'));
 
 router.get('/',(req,res,next) => {
   res.render('main.ejs');
