@@ -85,3 +85,28 @@ text-align: center;
 letter-spacing: 0.3px;
 
 }
+.category{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 54px;
+  
+background: #FFFFFF;
+/* Gray 5 */
+
+border: 1px solid #E0E0E0;
+}
+
+.category-content{
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 54px;
+}
+
+.category-cell{
+  border-bottom: 4px solid #000000;
+}
