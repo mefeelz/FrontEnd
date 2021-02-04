@@ -20,6 +20,11 @@ router.get('/login',(req,res,next) => {
   next();
 });
 
+// localhost:3000/login
+router.get('/review',(req,res,next) => {
+  res.render('review.ejs');
+  next();
+});
 
 app.use('/',router);
 

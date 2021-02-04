@@ -1,0 +1,87 @@
+.top-banner{
+  height: 252px;
+  width: 100%;
+  background: #ECECEC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 72px;
+  padding-bottom: 40px;
+}
+
+.top-banner-content{
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  display: flex;
+  position: relative;
+}
+
+.army-mark{
+  width: 140px;
+height: 140px;
+margin-right: 40px;
+}
+.banner-title{
+  margin-top: auto;
+  margin-bottom: 0px;
+}
+.banner-title > span{
+  font-family: NanumSquare;
+font-style: normal;
+font-weight: 800;
+font-size: 32px;
+line-height: 18px;
+/* identical to box height, or 56% */
+display: flex;
+align-items: center;
+margin-bottom: 32px;
+}
+.banner-text{
+  display: flex;
+}
+.banner-text > span{
+  font-family: NanumSquare;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 18px;
+/* identical to box height, or 100% */
+
+display: flex;
+align-items: center;
+letter-spacing: -0.012em;
+
+}
+
+
+.review-btn{
+  display: flex;
+flex-direction: row;
+align-items: center;
+padding: 12px 60px;
+
+position: absolute;
+width: 219px;
+height: 42px;
+right: 0px;
+bottom: 0px;
+color: #FFF;
+background: #0A0A0A;
+
+}
+
+.review-btn>span{
+  
+font-family: NanumSquare;
+font-style: normal;
+font-weight: 800;
+font-size: 14px;
+line-height: 18px;
+/* identical to box height, or 129% */
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.3px;
+
+}
