@@ -1,69 +1,177 @@
+<!-- 카테고리바 -->
+<!DOCTYPE html>
+<html lang="ko">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>김군화넷</title>
 
-  <!-- 카테고리바 -->
-  <!DOCTYPE html>
-  <html lang="ko">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>김군화넷</title>
-
-  <link rel = "stylesheet" type="text/css" href = "Stylesheet/review.css"/>
-  <link rel = "stylesheet" type="text/css" href = "Stylesheet/css_set.css"/>
+  <link rel="stylesheet" type="text/css" href="Stylesheet/review.css" />
+  <link rel="stylesheet" type="text/css" href="Stylesheet/css_set.css" />
 
 </head>
 
 <body>
   <%- include ("header")%>
-<div class = "content">
+  <div class="content">
 
-<!-- 탑베너 -->
-<div class = "top-banner">
-  <div class = "top-banner-content">
-    <img class = "army-mark" src = ""/>
-    <div class = "banner-title">
-      <span>3사단(18,22,23,포병 여단)</span>
-    <div class = "banner-text">
-      <img class = "banner-icon" src = "icon/crown.svg"/>
-      <span>4.0 (128개 리뷰)</span>
-    </div>
-  </div>
-   <div class = "review-btn">
-     <span>이 사단 리뷰하기</span>
-   </div>
- </div>
-</div>
-
- <!-- 중간 카테고리 -->
- <div class = "category">
-   <div class = "category-content">
-     <div class = "category-cell now-state">
-       <span>리뷰</span>
-     </div>
-     <div class = "category-cell">
-      <span>커뮤니티</span>
-    </div>
-    <div class = "category-cell">
-      <span>주변생활</span>
-    </div>
-   </div>
- </div>
-
- <div class = "bottom-background">
-  <div class = "bottom-content">
-    <div class = "bottom-content-left">
-      <div class = "text-box">
-        <span>3사단 리뷰</span>
+    <!-- 탑베너 -->
+    <div class="top-banner">
+      <div class="top-banner-content">
+        <img class="army-mark" src="" />
+        <div class="banner-title">
+          <span>3사단(18,22,23,포병 여단)</span>
+          <div class="banner-text">
+            <img class="banner-icon" src="icon/crown.svg" />
+            <span>4.0 (128개 리뷰)</span>
+          </div>
+        </div>
+        <div class="review-btn">
+          <span>이 사단 리뷰하기</span>
+        </div>
       </div>
     </div>
-    <div class = "bottom-content-right">
-      <div class = "text-box">
+
+    <!-- 중간 카테고리 -->
+    <div class="category">
+      <div class="category-content">
+        <div class="category-cell now-state">
+          <span>리뷰</span>
+        </div>
+        <div class="category-cell">
+          <span>커뮤니티</span>
+        </div>
+        <div class="category-cell">
+          <span>주변생활</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-background">
+      <div class="bottom-content">
+        <div class="bottom-content-left">
+          <div class="text-box">
+            <span>3사단 리뷰</span>
+            <div style="display: flex;">
+              <div class="sub-text-box">
+                <div class="total-review">
+                  <span>4.0</span>
+                  <%for (var i = 0 ; i < 5 ; i ++){%>
+                  <img class="total-review-icon" src="icon/crown.svg" />
+                  <%}%>
+          <div class = "total-review-text">128개 리뷰</div>
+        </div>
+        <div class = "sub-review"> 
+          <%for (var i = 0 ; i < 5 ; i ++){%>
+                  <div class="sub-review-cell">
+                    <span><%= 5-i%></span>
+                    <img class="total-review-icon" src="icon/crown.svg" />
+                    <div class="bar-graph"></div>
+                  </div>
+                  <%}%>
+        </div>
+      </div>
+      <div class = "vertical-line"></div>
+      <div class = "sub-text-box">
+        <div class = "total-review">
+          <span>항목별 평점</span>
+        </div>
+        <div class = "sub-review"> 
+          <%for (var i = 0 ; i < 5 ; i ++){%>
+                  <div class="sub-review-cell">
+                    <span>4.4</span>
+                    <img class="total-review-icon" src="icon/crown.svg" />
+                    <span>생활관 시설</span>
+                  </div>
+                  <%}%>
+        </div>
+      </div>
+      </div>
+      </div>
+      <div class = "text-box" style="margin-top: 20px;">
+        <%for(var k = 0; k< 3 ; k ++){%>
+        <div class = "personal-review">
+          <div class = "personal-review-left">
+            <span>4.0</span>
+            <div style="display:flex; margin-top: 12px; margin-bottom:28px">
+            <%for (var i = 0 ; i < 5 ; i ++){%>
+                  <img class="total-review-icon" src="icon/crown.svg" />
+                  <%}%>
+          </div>
+          <div class = "sub-review"> 
+            <%for (var i = 0 ; i < 5 ; i ++){%>
+              <div class="sub-review-cell">
+                <span>4.4</span>
+                <img class="total-review-icon" src="icon/crown.svg" />
+                <span>생활관 시설</span>
+              </div>
+            <%}%>
+          </div>
+          </div>
+          <div class = "personal-review-right">
+            <span>"밥 대존맛"</span>
+            <span>현역 2021.02.03</span>
+        
+          <div class = "personal-review-title">장점</div>
+          <div class = "personal-review-text">밥이 정말 맛있어요... 취사병과 사랑에 빠졌습니다..... 진짜 좋아요 군대에 또 오고 싶을 정도에요</div>
+          <div class = "personal-review-title">단점</div>
+          <div class = "personal-review-text">단점 없음</div>
+
+          <div class = "helpful-btn">
+            <img src = "icon/happy.png" width="16" height="16">
+            <span>도움이 돼요  (5)</span>
+          </div>
+        </div>
+      </div>
+    
+    <%}%>
+  </div>
+  </div>
+    <div class="bottom-content-right">
+      <div class="text-box">
         <span>사단 정보</span>
+        <div class="info-cell" style="margin-top: 20px;">
+          <div class="info-title">
+            주소
+          </div>
+          <div class="info-text">
+            강원도 철원군 서면 자등리) 402 (금강로 7628)
+          </div>
+        </div>
+        <div class="info-cell">
+          <div class="info-title">
+            사단 별칭
+          </div>
+          <div class="info-text">
+            어쩌구 부대
+          </div>
+        </div>
+        <div class="info-cell">
+          <div class="info-title">
+            식당 번호
+          </div>
+          <div class="info-text">
+            백골회관 : 033-458-7540 <br>
+            삼성회관 : 033-458-5539
+          </div>
+        </div>
+      </div>
+        <div class="text-box" style="margin-top: 20px;">
+          <span>관련 뉴스</span>
+          <%for (var j = 0;j<3; j++){%>
+          <div class="news-cell" style="margin-top: 20px;">
+            <div class="news-img"></div>
+            <div class="news-text">
+              철원군.의회 “3사단 사령부 이전 재검토를"
+            </div>
+          </div>
+          <%}%>
       </div>
     </div>
-  </div>
- </div>
+    </div>
+    </div>
 
 
   </div>
