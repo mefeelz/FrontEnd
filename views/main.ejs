@@ -31,17 +31,21 @@
       <span>사단리뷰 바로가기</span>
       <div class = "main-zone-line"></div>
       <div class = "army-direct-zone">
-    <%for(var i = 0; i< 9; i ++){%>
+    <%for(var i = 0; i< 3; i ++){%>
+      <div style="display: flex;">
+        <%for(var j = 0; j< 3; j ++){%>
         <div class = "army-direct-cell">
           <a href = "">
           <img src = ""/>
         </a>
         </div>
-  <%}%>
+        <%}%>
+      </div>
+      <%}%>
      
       </div>
     </div>
-    <div class = "main-zone" style="width : 28%">
+    <div class = "main-zone" style="width :calc(28% - 40px)">
       <span>많이 찾는 QnA</span>
       <div class = "main-zone-line"></div>
       <div class = "qna-list">
@@ -58,7 +62,7 @@
         <%}%>
       </div>
     </div>
-    <div class = "main-zone" style="width :28%">
+    <div class = "main-zone" style="width :calc(28% - 40px)">
       <span>실시간 사단평점 순위</span>
       <div class = "main-zone-line"></div>
       <div class = "qna-list">
