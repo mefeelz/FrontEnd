@@ -112,3 +112,7 @@ align-items: center;
 letter-spacing: 0.3px;
 
 }
+
+/* 사단 이미지 */
+.army-direct-zone img { width:100%; height:100%; }
+.army-direct-cell { border:3px solid #145A04; }
