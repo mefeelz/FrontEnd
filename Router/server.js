@@ -34,12 +34,12 @@ router.get('/login',(req,res,next) => {
 router.get("/main/search", (req, res) => {
   var keyword = req.query.keyword;
   console.log("keyord"+keyword);
-  var url = "http://localhost:3000/api/main/search?keyword="+keyword;
+  var url = "http://localhost:3000/api/main/search?keyword="+encodeURI(keyword);
   fetch(url) 
       .then(response => response.json())
       .then(answer => {
-        return console.log("answer"+answer);
-        // return res.render("aftersearch.ejs", { answer: answer});
+        console.log("answer"+answer);
+        return res.redirect('/review?uid='+answer[0].uid);
         })
       .catch(err => {
         console.log("err"+err);

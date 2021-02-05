@@ -31,7 +31,9 @@
           </div>
         </div>
         <div class="review-btn">
-          <span>하기</span>
+          <a href = "/reviewWrite">
+            <span>이 사단 리뷰하기</span>
+            </a>
         </div>
       </div>
     </div>
@@ -94,8 +96,8 @@
               <div class="community"> 
                   <div>
                     <%for(var i = 0 ; i < commudata.length ; i++){%>
-                      <div class="comm01">
-                        
+                      <div class="comm01" style="position: relative;">
+                        <img src="icon/3dot.png" onclick = "inquiry();" class = "inquiry">
                           <span class="title"><%=commudata[i].title%></span>
 
                           <p><%=commudata[i].content%>
@@ -189,7 +191,7 @@
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
-function select{
-  axios.get('').then
+function inquiry(){
+  confirm("신고 : 정말 마음의 편지를 보내시겠습니까?");
 }
 </script>
