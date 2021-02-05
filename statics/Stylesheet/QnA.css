@@ -134,10 +134,10 @@ body {
     margin:40px 0 10px 40px;
 }
 
-
 .comm01 {
-    margin:30px 0 0 40px;
+    margin:0 0 0 40px;
     width:680px;
+    padding-top:30px;
 }
 .title {
     font-family: NanumSquare;

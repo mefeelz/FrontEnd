@@ -1,7 +1,18 @@
 
-.content{
+.content{}
 
+/* 정렬 순 기능 */
+select {
+  width:240px;
+  height:42px;
+  border:1px solid #ddd;
+  margin:40px 0 10px 40px;
 }
+select:last-child { margin-left:15px; }
+
+
+
+
 .top-banner{
   height: 252px;
   width: 100%;
