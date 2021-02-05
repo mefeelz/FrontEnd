@@ -56,7 +56,8 @@ router.get('/review/:uid',(req,res,next) => {
   .then(divdata => {
     console.log(divdata);
     console.log(err);
-    fetch("http://localhost:3000/api/div/rating?uid="+uid+"&type="+type+"&status="+status,{method:'GET'}) 
+    var rank_url = "http://localhost:3000/api/div/rating?uid="+uid+"&type="+type+"&status="+status;
+    fetch(rank_url,{method:'GET'}) 
     .then(response => response.body.json())
     .then(ratingdata => {
       return res.render("review.ejs", { divdata: divdata , ratingdata: ratingdata,});
