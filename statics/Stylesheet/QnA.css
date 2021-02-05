@@ -170,7 +170,7 @@ body {
 /* 사단 정보 */
 .comm_info {
     width:330px;
-    height:433px;
+    height:auto;
     background:#fff;
     clear:both;
     margin:20px 0 20px 20px;
@@ -203,7 +203,12 @@ body {
     margin-top:20px;
     padding:20px 120px;
 }
-
+.more-btn{
+    border:0px;
+    background: transparent;
+    width: 100%;
+}
+.more-btn:focus {outline:none;}
 .label.tiny {
     font-size: .688rem!important;
     padding: .25rem .375rem;

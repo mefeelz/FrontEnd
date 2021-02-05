@@ -115,19 +115,14 @@
                         <p>
                             <span>철원 오리너구리</span>님이 "3사단 일과"에 <span>답변</span>을 남겼습니다. 
                         </p>
-
+                        <div style="display: none;" id ="more-info"> 
+                            <p>1000명이 넘게 "3사단 일과"를 살펴봤어요!</p>
+                            <p>
+                                <span>철원 오리너구리</span>님이 "3사단 일과"에 <span>답변</span>을 남겼습니다. 
+                            </p> 
+                        </div>
                         <div>
-                            <input value="더보기 ∨" onclick="if(this.parentNode.getElementsByTagName('div')[0].style.display != '')
-                            {this.parentNode.getElementsByTagName('div')[0].style.display = '';this.value = '숨기기';}
-                            else{this.parentNode.getElementsByTagName('div')[0].style.display = 'none'; this.value = '더보기';}" 
-                            type="button" />
-                            
-                            <div style="display: none;"> 
-                                <p>1000명이 넘게 "3사단 일과"를 살펴봤어요!</p>
-                                <p>
-                                    <span>철원 오리너구리</span>님이 "3사단 일과"에 <span>답변</span>을 남겼습니다. 
-                                </p> 
-                            </div>
+                            <input value="더보기" onclick="more(this);" class="more-btn" />
                         </div>
 
                     </div>
@@ -138,3 +133,16 @@
 
     </div>
 </body>
+<script>
+    function more(obj){
+        var moreinfo = document.getElementById('more-info');
+        
+        if(obj.value == "더보기"){
+            moreinfo.style.display = 'block'
+            obj.value = '숨기기';
+        }else{
+            moreinfo.style.display = 'none'
+            obj.value = '더보기';
+        }
+    }
+</script>
