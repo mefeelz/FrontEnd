@@ -32,6 +32,11 @@ router.get('/community',(req,res,next) => {
   next();
 });
 
+// localhost:3000/login
+router.get('/QnA',(req,res,next) => {
+  res.render('QnA.ejs');
+  next();
+});
 
 app.use('/',router);
 
