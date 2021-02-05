@@ -25,6 +25,14 @@ body {
 .banner {
     float:left;
 }
+
+.army-search-btn{
+    position: absolute;
+    width: 51.67px;
+    height: 52px;
+    right: 48px;
+    top: 44px;
+}
 .head_text {
     width: 366px;
     height: 18px;
@@ -44,7 +52,8 @@ body {
     color: #000000;
     margin-top:144px;
 }
-.img02 {margin:32px 12px 0 0;}
+
+.img02 {margin-right: 8px;}
 #review a {
     background:#000;
     color:#fff;
@@ -139,6 +148,22 @@ body {
     width:680px;
     padding-top:30px;
 }
+
+.comm01>p{
+    
+font-family: NanumSquare;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 18px;
+/* or 129% */
+
+display: flex;
+align-items: center;
+
+color: #000000;
+
+}
 .title {
     font-family: NanumSquare;
     font-style: normal;
@@ -152,10 +177,12 @@ body {
     font-size:14px;
     line-height:18px;
 }
-.flo {
-    float:left;
-    margin-right:30px;
-}
+.flo{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-right:20px;
+  }
 .border {
     border-bottom:1px solid #eee; 
     width:720px;
@@ -233,7 +260,6 @@ body {
     white-space: nowrap;
     cursor: default;
     background-color: #5684ff;
-    border-radius: 2rem;
 }
 *, :after, :before {
     box-sizing: inherit;

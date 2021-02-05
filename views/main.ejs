@@ -33,7 +33,7 @@
       <div class = "army-direct-zone">
       <div style="display: flex;">
         <div class = "army-direct-cell">
-          <a href = "">
+          <a href = "/review?uid=1">
             <img src = "icon/img/3.jpg"/>
           </a>
         </div>
@@ -112,9 +112,9 @@
           <div class = "qna-text">
           <span><%=rank[i].name%></span>
           </div>
-          <%if (rank[i].status == '1'){%>
+          <%if (rank[i].type == 1){%>
             <img src = "icon/up.png"  class = "main-icon"/>
-            <%}else if(rank[i].status == '2'){%>
+            <%}else if(rank[i].type == 2){%>
               <img src = "icon/down.png"  class = "main-icon"/>
               <%}else{%>
                 <img src = "icon/stable.png"  class = "main-icon"/>
