@@ -1,0 +1,340 @@
+body {
+    font-family: NanumSquare;
+    font-style: normal;
+    font-weight: 800;
+    background:#f4f6f9;
+}
+#wrapper {
+    background:#f4f6f9;
+}
+.comm_head {
+    background-color:#ECECEC;
+    height:252px;
+}
+.head_in {
+    width:1110px; 
+    margin:0 auto;
+}
+.head_img img {
+    float:left;
+    width:140px;
+    height:140px;
+    margin:72px 40px 0 0;
+    background:#C4C4C4;
+}
+.banner {
+    float:left;
+}
+.head_text {
+    width: 366px;
+    height: 18px;
+    left: 346px;
+    top: 232px;
+
+    font-family: NanumSquare;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+
+    letter-spacing: -2px;
+
+    color: #000000;
+    margin-top:144px;
+}
+.img02 {margin:32px 12px 0 0;}
+#review a {
+    background:#000;
+    color:#fff;
+    padding:13px 60px;
+}
+#review {
+    margin:auto;
+    border:none; 
+    background-color:#000;
+    margin-top:190px;
+    float:right;
+}
+
+
+
+.subMenu {
+    height:54px;
+    border:1px solid #E0E0E0;
+    background:#fff;
+}
+.menuArea {width:1110px; margin:0 auto;}
+.menu li {
+    float:left;
+    font-size:15px;
+    margin-left:50px;
+    margin-right:60px;
+    padding:18px 0;
+}
+.menu li:hover {
+    border-bottom:4px solid #000;
+    font-weight:bold;
+}
+.menu a { text-decoration:none; list-style:none; }
+
+
+
+.wrap { width:1110px; margin:0 auto; }
+
+.search {
+    width:760px;
+    height:262px;
+    margin:20px 20px 20px 0;
+    background:#fff;
+}
+.search_commu {
+    padding:40px 0 0 40px;
+    font-size:24px;
+    line-height:18px;
+    font-weight:800;
+    display:flex;
+    align-items:center;
+    color:#000;
+}
+.search input {
+    border:2px solid black;
+    width: 680px;
+    height: 60px;
+    margin:40px 0 0 40px;
+    color:#ccc;
+    font-size:17px;
+} 
+.recommen_k {
+    width:680px;
+    font-family: NanumSquare;
+    font-style: normal;
+    margin:30px 0 0 40px;
+    font-size:14px;
+    font-weight:800;
+    line-height:23px;
+    color: #B2A835;
+}
+.recommen_k span {
+    margin-right:20px;
+}
+.recomm {color:#000;}
+
+
+.community {
+    width:760px;
+    background:#fff;
+    padding-bottom:40px;
+}
+
+
+.comm01 {
+    margin:0 0 0 40px;
+    width:680px;
+    padding-top:40px;
+}
+.title2 {
+    font-family: NanumSquare;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 18px;
+    color: #000000;
+    font-size: 24px;
+    display:block;
+}
+.comm01 p {
+    margin-top:25px;
+    font-size:14px;
+    line-height:18px;
+}
+.flo {
+    float:left;
+    margin-right:30px;
+}
+.border {
+    border-bottom:1px solid #eee; 
+    width:720px;
+    margin:0 auto;
+}
+/* error */
+#wrapper { background:#f4f6f9;}
+.wrap_L { width:760px; float:left; background:#f4f6f9; margin-top:20px; }
+.wrap_R { width:330px; height:1700px; float:left; background:#f4f6f9; }
+
+/* 사단 정보 */
+.comm_info {
+    width:330px;
+    height:auto;
+    margin:40px 0 20px 20px;
+}
+
+.smileIcon { position: relative; width:31px;}
+
+.guide { position:relative; top:-31px; left:40px; width:280px; }
+.guide1 { font-family: NanumSquare;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+}
+.guide2 { font-family: NanumSquare;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 20px;
+    margin-top:12px;
+}
+.guide2 span {color:#2F80ED;}
+
+.info01 {
+    padding:28px 0 0 20px;
+    border:1px solid red;
+}
+
+.label.tiny {
+    font-size: .688rem!important;
+    padding: .25rem .375rem;
+}
+.label.alert {
+    color: #fff;
+    background: #B2A835;
+}
+.maright-1 {
+    margin-right: .0625rem!important;
+}
+.label, .label.primary {
+    background: #1779ba;
+    color: #fff;
+}
+.label {
+    display: inline-block;
+    padding: .33333rem .5rem;
+    border-radius: 0;
+    font-size: .8rem;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: default;
+    background-color: #5684ff;
+    border-radius: 2rem;
+}
+*, :after, :before {
+    box-sizing: inherit;
+}
+.success { background: #145A04; margin-left:10px; }
+
+
+
+.top-banner{
+    height: 170px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+  }
+  
+  .top-banner-content{
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
+    display: flex;
+    position: relative;
+  }
+  
+  .army-mark{
+    width: 100px;
+    height: 100px;
+    margin-right: 40px;
+    background: #C4C4C4;
+  }
+  .banner-title{
+    margin-top: auto;
+    margin-bottom: 0px;
+  }
+  .banner-title > span{
+    font-family: NanumSquare;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 18px;
+    /* identical to box height, or 56% */
+    display: flex;
+    align-items: center;
+    margin-bottom: 13px;
+  }
+  .banner-text{
+    display: flex;
+  }
+  .banner-text > span{
+    font-family: NanumSquare;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 8px;
+    line-height: 18px;
+    /* identical to box height, or 100% */
+    
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.012em;
+  
+  }
+
+
+.m_bott {
+    margin-bottom:28px;
+}
+  .total {
+    font-family: NanumSquare;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;    
+    color: #000000;
+    display:block;
+  }
+
+.banner-icon2 { margin:12px 0 20px; }
+
+.grade_area { border-left: 1px solid #BDBDBD;  padding-left:20px; }
+
+.grade_area span { 
+    font-family: NanumSquare;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;    
+}
+
+.grade01 span { margin-right:60px; }
+.grade02 span { margin-right:76px; }
+.grade03 span { margin-right:114px; }
+.grade04 span { margin-right:124px; }
+.grade05 span { margin-right:76px; }
+
+.grade_area > div {margin-bottom:14px; }
+.grade_area > div:last-child {margin-bottom:40px; }
+
+
+.th01 { font-family: NanumSquare;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.box01 input { width:680px; height:48px; border:1px solid #BDBDBD; margin:8px 0 20px; }
+
+
+/* 별점주기
+#star_grade a{
+    text-decoration: none;
+    color: gray;
+}
+#star_grade a.on{
+    color: red;
+} */
+
+
+.box02 {width:680px;}
