@@ -12,8 +12,8 @@
   <link rel="stylesheet" type="text/css" href="Stylesheet/local.css" />
   <link rel="stylesheet" type="text/css" href="Stylesheet/css_set.css" />
 
-</head>
-
+</head>  
+ 
 <body>
   <%- include ("header")%>
   <div class="content">
@@ -203,6 +203,63 @@
           </div>
         </div>
 
+
+        <!-- 팝업 창 -->
+        <button id="myBtn">주변 올리기</button>
+ 
+        <div id="myModal" class="modal">
+    
+
+        <div class="modal-content">
+          <span class="close">&times;</span>                                                               
+          
+          <div class="pop_wrap">
+            <p class="pop_h">주변생활</p>
+
+            <form>
+
+              <div>
+                <h3 class="join_title">
+                  <label for="id">카테고리</label>
+                </h3>
+                <span class="pop_box01">
+                  <select id="mm" class="sel">
+                    <option>카페고리를 선택해주세요.</option>
+                    <option value="01">식당</option>
+                    <option value="02">숙박</option>
+                    <option value="03">피씨방</option>                    
+                    <option value="03">기타</option>
+                  </select>
+                </span>
+              </div>
+
+              <!-- 상호명 -->
+						  <div>
+                <h3 class="join_title">
+                  <label for="id">상호명</label>
+                </h3>
+                <span class="pop_box01">
+                  <input type="text" id="id" class="int" maxlength="20" placeholder="상호명을 입력해주세요.">
+                </span>
+              </div>
+
+              <!-- 주소 -->
+              <div>                
+                <h3 class="join_title"><label for="phoneNo">주소</label></h3>
+                <span class="pop_box01">
+                  <input type="text" name="" class="postcodify_address" value=""  placeholder="주소를 입력해주세요." /><br />	
+                </span>	
+              </div>
+
+            </form>
+          </div>
+        </div>
+    
+        </div>
+
+
+
+
       </div>
   </div>
 
@@ -226,5 +283,35 @@
 function select{
   axios.get('').then
 }
+</script>
+
+
+<script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+ 
+ // Get the button that opens the modal
+ var btn = document.getElementById("myBtn");
+
+ // Get the <span> element that closes the modal
+ var span = document.getElementsByClassName("close")[0];                                          
+
+ // When the user clicks on the button, open the modal 
+ btn.onclick = function() {
+     modal.style.display = "block";
+ }
+
+ // When the user clicks on <span> (x), close the modal
+ span.onclick = function() {
+     modal.style.display = "none";
+ }
+
+ // When the user clicks anywhere outside of the modal, close it
+ window.onclick = function(event) {
+     if (event.target == modal) {
+         modal.style.display = "none";
+     }
+ }
+
 </script>
       
