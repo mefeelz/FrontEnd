@@ -1,6 +1,6 @@
 
 .content{
-  background: #E5E5E5;
+
 }
 .top-banner{
   height: 252px;
@@ -138,7 +138,7 @@ color: #000000;
 .bottom-background{
   width: 100%;
   height: auto;
-  background: #E5E5E5;
+  background: #f4f6f9;
 display: flex;
 justify-content: center;
 }

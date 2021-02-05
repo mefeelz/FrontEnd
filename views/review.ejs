@@ -37,19 +37,19 @@
     <!-- 중간 카테고리 -->
     <div class="category">
       <div class="category-content">
-        <div class="category-cell now-state">
+        <div id= "category-review" class="category-cell now-state" onclick="changecategory(this)">
           <span>리뷰</span>
         </div>
-        <div class="category-cell">
+        <div id= "category-community" class="category-cell" onclick="changecategory(this)">
           <span>커뮤니티</span>
         </div>
-        <div class="category-cell">
+        <div id= "category-local" class="category-cell" onclick="changecategory(this)">
           <span>주변생활</span>
         </div>
       </div>
     </div>
 
-    <div class="bottom-background">
+    <div class="bottom-background" id = "review-page">
       <div class="bottom-content">
         <div class="bottom-content-left">
           <div class="text-box">
@@ -170,13 +170,45 @@
           <%}%>
       </div>
     </div>
+  </div>
+</div>
+  <div class="bottom-background" id = "community-page" style="display: none;">
+    <%- include ("community")%>
+  </div>
+  <div class="bottom-background" id = "local-page" style="display: none;">
+ 
+  </div>
     </div>
     </div>
 
 
   </div>
 </body>
-</html>
-<script>
 
+
+
+
+<script>
+function changecategory(obj){
+
+  var pages = document.getElementsByClassName('bottom-background');
+  for(var i = 0 ; i < pages.length ; i++){
+    pages[i].style.display = "none";
+  }
+
+  var categorys = document.getElementsByClassName('category-cell');
+  for(var i = 0 ; i < categorys.length ; i++){
+    categorys[i].classList.remove("now-state");
+  }
+  obj.classList.add("now-state");
+
+if(obj.id == "category-review"){ 
+  document.getElementById('review-page').style.display = "flex";
+}else if(obj.id == "category-community"){ 
+  document.getElementById('community-page').style.display = "flex";
+}else if(obj.id == "category-local"){
+  document.getElementById('local-page').style.display = "flex";
+}
+}
 </script>
+</html>
