@@ -2,6 +2,7 @@ body {
     font-family: NanumSquare;
     font-style: normal;
     font-weight: 800;
+    background:#f4f6f9;
 }
 #wrapper {
     background:#f4f6f9;
@@ -44,6 +45,21 @@ body {
     margin-top:144px;
 }
 .img02 {margin:32px 12px 0 0;}
+#review a {
+    background:#000;
+    color:#fff;
+    padding:13px 60px;
+}
+#review {
+    margin:auto;
+    border:none; 
+    background-color:#000;
+    margin-top:190px;
+    float:right;
+}
+
+
+
 .subMenu {
     height:54px;
     border:1px solid #E0E0E0;
@@ -148,9 +164,9 @@ body {
     padding-bottom:85px;
 }
 /* error */
-.wrap { height:1800px;}
-.wrap_L { width:760px; float:left; }
-.wrap_R { width:330px; height:1700px; float:left; }
+#wrapper { background:#f4f6f9;}
+.wrap_L { width:760px; float:left; background:#f4f6f9; }
+.wrap_R { width:330px; height:1700px; float:left; background:#f4f6f9; }
 
 /* 사단 정보 */
 .comm_info {
