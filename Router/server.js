@@ -31,7 +31,10 @@ router.get('/community',(req,res,next) => {
   res.render('community.ejs');
   next();
 });
-
+router.get('/local',(req,res,next) => {
+  res.render('local.ejs');
+  next();
+});
 
 app.use('/',router);
 

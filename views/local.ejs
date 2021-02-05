@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+  <html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>김군화넷</title>
+    <link rel = "stylesheet" type="text/css" href = "Stylesheet/css_set.css"/>
+    <link rel = "stylesheet" type="text/css" href = "Stylesheet/local.css"/>
+
+  </head>
+
+<body>
+        <div class="wrap">
+            <div class="wrap_L">
+
+                <div class="search">
+                    <span class="search_commu">3사단 주변생활</span>
+
+                    <input id="keyword" name="keyword" type="search" placeholder="키워드로 검색해보세요."
+                    autocomplete="off" class="inp-srch wrap-srch on">
+
+                    <div class="recommen_k">
+                        <span class="recomm">추천 키워드</span>
+                        <span>3사단</span>
+                        <span>휴가</span>
+                        <span>3사단 조교</span>
+                        <span>일과</span>
+                        <span>3사단</span>
+                        <span>휴가</span>
+                        <span>3사단 조교</span>
+                        <span>일과</span>
+                        <span>3사단</span>
+                        <span>휴가</span>
+                        <span>3사단 조교</span>
+                        <span>일과</span>
+                        <span>3사단</span>
+                        <span>휴가</span>
+                    </div>
+                </div>
+
+                <div class="community">                    
+                    <div>
+                        <select class = "local-select">
+                            <option value="id">최신순</option>
+                            <option value="pop">추천순</option>
+                            <option value="old">오래된 순</option>
+                            <option value="low">평점 높은 순</option>
+                            <option value="high">평점 낮은 순</option>
+                        </select>
+                    </div>
+                    <%for(var i = 0; i < 3; i ++){%>
+                    <div>
+                        <div class="comm01">
+                          <div style="display: flex;">
+                            <span class="title">굴사랑 굴내음</span>
+                            <span class="hashtag">#식당</span>
+                          </div>
+                          <div class="comm01-cell" style="margin-top: 20px;">
+                            <span>주소</span>
+                            <span>서울특별시 송파구 오금로18길 6 106호</span>
+                          </div>
+                          <div class="comm01-cell">
+                            <span>전화 번호</span>
+                            <span>02-999-9999</span>
+                          </div>
+                          <div class="local-img">
+                            <img src="" />
+                          </div>
+
+                          <p>밥이 정말 맛있어요... 취사병과 사랑에 빠졌습니다.....
+                            진짜 좋아요 군대에 또 오고 싶을 정도에요 밥이 정말 맛있어요... 취사병과 사랑에 빠졌습니다.....
+                            진짜 좋아요 군대에 또 오고 싶을 정도에요 밥이 정말 맛있어요... 취사병과 사랑에 빠졌습니다.....
+                            진짜 좋아요 군대에 또 오고 싶을 정도에요
+                          </p>
+
+                          <div style="display: flex;">
+                            <div class="flo">
+                              <img class="local-img02" src="icon/hospitable.png">
+                              <span>1,950</span>
+                            </div>
+                            <div class="flo">
+                              <img class="local-img02" src="icon/comment.png">
+                              <span>5</span>
+                            </div>
+                            <div class="flo">
+                              <img class="local-img02" src="icon/handclap.png">
+                              <span>6</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="border"></div>
+                     <%}%>
+                 
+                    </div>
+                    <div class="border"></div>
+                   
+                    </div>
+                    
+
+            <div class="wrap_R">
+                <div class="comm_info">
+                    <div class="info01">
+                        <span class="info02">사단 정보</span>
+
+                        <table border="0">
+                            <tr>
+                                <th>주소</th>
+                                <td>강원도 철원군 서면 자등리 402 (금강로 7628)</td>
+                            </tr>
+                            <tr>
+                                <th>사단 별칭</th>
+                                <td>블라블라블라</td>
+                            </tr>
+                            <tr>
+                                <th>식당 번호</th>
+                                <td>
+                                    백골회관:033-458-7540</br>
+                                    삼성회관:033-458-5539
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="comm_info2">
+                    <div class="info01">
+                        <span class="info02">관련 뉴스</span>
+
+                        <div>
+                            <div class="news"></div>
+                            <p>철원군.의회 "3사단 사령부 이전 재검토를"</p>
+                        </div>
+                        <div>
+                            <div class="news"></div>
+                            <p>철원군.의회 "3사단 사령부 이전 재검토를"</p>
+                        </div>
+                        <div>
+                            <div class="news"></div>
+                            <p>철원군.의회 "3사단 사령부 이전 재검토를"</p>
+                        </div>
+                        <div>
+                            <div class="news"></div>
+                            <p>철원군.의회 "3사단 사령부 이전 재검토를"</p>
+                        </div>
+                        <div>
+                            <div class="news"></div>
+                            <p>철원군.의회 "3사단 사령부 이전 재검토를"</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
