@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "clone kakao website just for studing",
   "dependencies": {
+    "axios": "^0.21.1",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
