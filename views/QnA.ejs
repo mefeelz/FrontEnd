@@ -19,11 +19,13 @@
                 <div class="search">
                     <span class="search_commu">궁금해요</span>
                     <form action = "/qna" method="GET">
+                    <div style="position: relative;">
                     <input id="keyword" name="keyword" type="search" placeholder="키워드로 검색해보세요."
                     autocomplete="off" class="inp-srch wrap-srch on">
                     <button type="submit" class="army-search-btn">
                         <img src="icon/search.png">
-                    </button>    
+                    </button>
+                    </div>    
                 </form>
                     <div class="recommen_k">
                         <span class="recomm">추천 키워드</span>
@@ -49,13 +51,14 @@
                     <div>
                         <div class="comm01">
                             <span class="title"><%=qnadata[i].title%></span>
-
+                            <%if(i<4){%>
                             <span class="label success tiny maright-1">NEW</span>
+                            <%}if(qnadata[i].like_count>1){ %>
                             <span class="label alert tiny maright-1">HOT</span>
-
+                            <%}%>
                             <p><%=qnadata[i].content%>
                             </p>
-                            <div>
+                            <div style="display: flex; margin-top: 12px;">
                                 <div class="flo">
                                     <img class="img02" src="icon/hospitable.png">
                                     <span><%=qnadata[i].show_count%></span>
