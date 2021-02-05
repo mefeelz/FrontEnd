@@ -50,7 +50,8 @@ router.get('/review/:uid',(req,res,next) => {
   var uid = req.params.uid;
   var type = 1 || req.query.type;
   var status = 2 || req.query.status;
-  fetch("http://localhost:3000/api/div/info?uid=1",{method: 'GET'}) 
+  var url = "http://localhost:3000/api/div/info?uid="+uid;
+  fetch(url,{method: 'GET'}) 
   .then(response => {console.log(response); return response.json();})
   .then(divdata => {
     console.log(divdata);
