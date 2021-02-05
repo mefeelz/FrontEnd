@@ -1,17 +1,28 @@
 const express = require('express');
 const Router = require('express-router');
-                     // express-ejs-layouts 사용하기 설정
+const fetch = require("node-fetch");   // express-ejs-layouts 사용하기 설정
 const app = express();
 const router = express.Router();
-const port = 3000;
+const port = 3002;
 
 app.set('views','views'); // 정적 파일 위치 지정
 app.set('view engine','ejs'); // 템플릿 엔진 세팅
 app.use(express.static('statics'));
 
-router.get('/',(req,res,next) => {
-  res.render('main.ejs');
-  next();
+//One of the routes
+router.get("/", (req, res) => {
+  fetch("http://localhost:3000/api/main/qna") 
+      .then(response => response.json())
+      .then(qnadata => {
+        fetch("http://localhost:3000/api/main/div-rank",{method: 'GET'}) 
+        .then(rankresponse =>{return rankresponse.json()})
+        .then(rankdata => {
+        return res.render("main.ejs", { qna: qnadata , rank : rankdata});
+        })
+      })
+      .catch(err => {
+        console.log("err"+err);
+      });
 });
 
 // localhost:3000/login
@@ -21,9 +32,15 @@ router.get('/login',(req,res,next) => {
 });
 
 // localhost:3000/login
-router.get('/review',(req,res,next) => {
-  res.render('review.ejs');
-  next();
+router.get('/review/:uid',(req,res,next) => {
+  var uid = req.params.uid;
+  fetch("http://localhost:3000/api/div/info?uid="+uid,{method:'GET'}) 
+  .then(response => response.json())
+  .then(divdata => {
+    return res.render("review.ejs", { divdata: divdata});
+  }).catch(err => {
+    console.log("err"+err);
+  });
 });
 
 // localhost:3000/login

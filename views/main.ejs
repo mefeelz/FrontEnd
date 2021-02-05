@@ -49,15 +49,15 @@
       <span>많이 찾는 QnA</span>
       <div class = "main-zone-line"></div>
       <div class = "qna-list">
-        <%for(var i = 0; i< 15; i ++){%>
+        <%for(var i = 0; i< qna.length; i ++){%>
         <div class = "qna-cell">
           <div class = "qna-text">
-          <span>거사원은 세입 세출의 결산율</span>
+          <span><%=qna[i].title%></span>
           </div>
           <img src = "icon/comment.png"  class = "main-icon"/>
-          <span>5</span>
+          <span><%=qna[i].comment_count%></span>
           <img src = "icon/handclap.png"  class = "main-icon"/>
-          <span>6</span>  
+          <span><%=qna[i].like_count%></span>  
         </div>
         <%}%>
       </div>
@@ -66,15 +66,18 @@
       <span>실시간 사단평점 순위</span>
       <div class = "main-zone-line"></div>
       <div class = "qna-list">
-        <%for(var i = 0; i< 15; i ++){%>
+        <%for(var i = 0; i< rank.length; i ++){%>
         <div class = "qna-cell">
           <div class = "qna-text">
-          <span>3사단</span>
+          <span><%=rank[i].name%></span>
           </div>
-          <img src = "icon/comment.png"  class = "main-icon"/>
-          <span>5</span>
-          <img src = "icon/handclap.png"  class = "main-icon"/>
-          <span>6</span>  
+          <%if (rank[i].status == '1'){%>
+            <img src = "icon/up.png"  class = "main-icon"/>
+            <%}else if(rank[i].status == '2'){%>
+              <img src = "icon/down.png"  class = "main-icon"/>
+              <%}else{%>
+                <img src = "icon/stable.png"  class = "main-icon"/>
+                <%}%>
         </div>
         <%}%>
       </div>
