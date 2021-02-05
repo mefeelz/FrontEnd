@@ -81,13 +81,13 @@ width: 219px;
 height: 42px;
 right: 0px;
 bottom: 0px;
-color: #FFF;
+
 background: #0A0A0A;
 
 }
 
-.review-btn>span{
-  
+.review-btn>a>span{
+  color: #FFF;
 font-family: NanumSquare;
 font-style: normal;
 font-weight: 800;
