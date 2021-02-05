@@ -18,10 +18,13 @@
 
                 <div class="search">
                     <span class="search_commu">궁금해요</span>
-
+                    <form action = "/qna" method="GET">
                     <input id="keyword" name="keyword" type="search" placeholder="키워드로 검색해보세요."
                     autocomplete="off" class="inp-srch wrap-srch on">
-
+                    <button type="submit" class="army-search-btn">
+                        <img src="icon/search.png">
+                    </button>    
+                </form>
                     <div class="recommen_k">
                         <span class="recomm">추천 키워드</span>
                         <span>3사단</span>
@@ -42,37 +45,28 @@
                 </div>
 
                 <div class="community"> 
-                    <%for (var i = 0; i < 5; i++){%>
+                    <%for (var i = 0; i < qnadata.length; i++){%>
                     <div>
                         <div class="comm01">
-                            <span class="title">3사단 일과</span>
+                            <span class="title"><%=qnadata[i].title%></span>
 
                             <span class="label success tiny maright-1">NEW</span>
                             <span class="label alert tiny maright-1">HOT</span>
 
-                            <p>밥이 정말 맛있어요... 취사병과 사랑에 빠졌습니다..... 
-                                진짜 좋아요 군대에 또 오고 싶을 정도에요 밥이 정말 맛있어요... 
-                                취사병과 사랑에 빠졌습니다..... 진짜 좋아요 군대에 또 오고 싶을 정도에요</br>
-                                밥이 정말 맛있어요... 취사병과 사랑에 빠졌습니다..... 
-                                진짜 좋아요 군대에 또 오고 싶을 정도에요 밥이 정말 맛있어요... 
-                                취사병과 사랑에 빠졌습니다..... 진짜 좋아요 군대에 또 오고 싶을 정도에요
-                                밥이 정말 맛있어요... 취사병과 사랑에 빠졌습니다..... 
-                                진짜 좋아요 군대에 또 오고 싶을 정도에요밥이 정말 맛있어요... 
-                                취사병과 사랑에 빠졌습니다..... 
-                                진짜 좋아요 군대에 또 오고 싶을 정도에요.
+                            <p><%=qnadata[i].content%>
                             </p>
                             <div>
                                 <div class="flo">
                                     <img class="img02" src="icon/hospitable.png">
-                                    <span>1,950</span>
+                                    <span><%=qnadata[i].show_count%></span>
                                 </div>
                                 <div class="flo">
                                     <img class="img02" src="icon/comment.png">
-                                    <span>5</span>
+                                    <span><%=qnadata[i].comment_count%></span>
                                 </div>
                                 <div class="flo">
                                     <img class="img02" src="icon/handclap.png">
-                                    <span>6</span>
+                                    <span><%=qnadata[i].like_count%></span>
                                 </div>
                             </div>
                         </div>

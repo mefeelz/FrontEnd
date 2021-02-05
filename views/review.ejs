@@ -22,10 +22,11 @@
       <div class="top-banner-content">
         <img class="army-mark" src="" />
         <div class="banner-title">
-          <span>3사단(18,22,23,포병 여단)</span>
+          <span><%=divdata.name%> (<%=divdata.brigade%>)</span>
           <div class="banner-text">
             <img class="banner-icon" src="icon/crown.svg" />
-            <span>4.0 (128개 리뷰)</span>
+            <%var totalrating = (ratingdata.info.px_rating + ratingdata.info.domitory_rating + ratingdata.info.meal_rating + ratingdata.info.location_rating + ratingdata.info.shower_rating)/5%>
+            <span><%=totalrating%> (<%=ratingdata.info.review_count%>개 리뷰)</span>
           </div>
         </div>
         <div class="review-btn">
@@ -37,14 +38,20 @@
     <!-- 중간 카테고리 -->
     <div class="category">
       <div class="category-content">
-        <div id= "category-review" class="category-cell now-state" onclick="changecategory(this)">
+        <div id= "category-review" class="category-cell now-state">
+          <a href = "/review?uid=1">
           <span>리뷰</span>
+          </a>
         </div>
-        <div id= "category-community" class="category-cell" onclick="changecategory(this)">
+        <div id= "category-community" class="category-cell">
+          <a href = "/community?uid=1">
           <span>커뮤니티</span>
+          </a>
         </div>
-        <div id= "category-local" class="category-cell" onclick="changecategory(this)">
+        <div id= "category-local" class="category-cell">
+          <a href = "/local?uid=1">
           <span>주변생활</span>
+        </a>
         </div>
       </div>
     </div>
@@ -53,7 +60,7 @@
       <div class="bottom-content">
         <div class="bottom-content-left">
           <div class="text-box">
-            <span>3사단 리뷰</span>
+            <span><%=divdata.name%> 리뷰</span>
             <div style="display: flex;">
               <div class="sub-text-box">
                 <div class="total-review">
@@ -61,7 +68,7 @@
                   <%for (var i = 0 ; i < 5 ; i ++){%>
                   <img class="total-review-icon" src="icon/crown.svg" />
                   <%}%>
-          <div class = "total-review-text">128개 리뷰</div>
+          <div class = "total-review-text"><%ratingdata.info.review_count%>개 리뷰</div>
         </div>
         <div class = "sub-review"> 
           <%for (var i = 0 ; i < 5 ; i ++){%>
@@ -79,13 +86,33 @@
           <span>항목별 평점</span>
         </div>
         <div class = "sub-review"> 
-          <%for (var i = 0 ; i < 5 ; i ++){%>
+
                   <div class="sub-review-cell">
-                    <span>4.4</span>
+                    <span><%=ratingdata.info.px_rating%></span>
+                    <img class="total-review-icon" src="icon/crown.svg" />
+                    <span>PX 시설</span>
+                  </div>
+                  <div class="sub-review-cell">
+                    <span><%=ratingdata.info.domitory_rating%></span>
                     <img class="total-review-icon" src="icon/crown.svg" />
                     <span>생활관 시설</span>
                   </div>
-                  <%}%>
+                  <div class="sub-review-cell">
+                    <span><%=ratingdata.info.meal_rating%></span>
+                    <img class="total-review-icon" src="icon/crown.svg" />
+                    <span>식사</span>
+                  </div>
+                  <div class="sub-review-cell">
+                    <span><%=ratingdata.info.location_rating%></span>
+                    <img class="total-review-icon" src="icon/crown.svg" />
+                    <span>위치</span>
+                  </div>
+                  <div class="sub-review-cell">
+                    <span><%=ratingdata.info.shower_rating%></span>
+                    <img class="total-review-icon" src="icon/crown.svg" />
+                    <span>샤워실 시설</span>
+                  </div>
+
         </div>
       </div>
       </div>
@@ -100,7 +127,7 @@
               <option value="high">평점 낮은 순</option>
           </select>
       </div>
-        <%for(var k = 0; k< 3 ; k ++){%>
+        <%for(var k = 0; k< ratingdata.list.length ; k ++){%>
         <div class = "personal-review">
           <div class = "personal-review-left">
             <span>4.0</span>
@@ -110,27 +137,45 @@
                   <%}%>
           </div>
           <div class = "sub-review"> 
-            <%for (var i = 0 ; i < 5 ; i ++){%>
-              <div class="sub-review-cell">
-                <span>4.4</span>
-                <img class="total-review-icon" src="icon/crown.svg" />
-                <span>생활관 시설</span>
-              </div>
-            <%}%>
+            <div class="sub-review-cell">
+              <span><%=ratingdata.list[k].px%></span>
+              <img class="total-review-icon" src="icon/crown.svg" />
+              <span>PX 시설</span>
+            </div>
+            <div class="sub-review-cell">
+              <span><%=ratingdata.list[k].domitory%></span>
+              <img class="total-review-icon" src="icon/crown.svg" />
+              <span>생활관 시설</span>
+            </div>
+            <div class="sub-review-cell">
+              <span><%=ratingdata.list[k].meal%></span>
+              <img class="total-review-icon" src="icon/crown.svg" />
+              <span>식사</span>
+            </div>
+            <div class="sub-review-cell">
+              <span><%=ratingdata.list[k].location%></span>
+              <img class="total-review-icon" src="icon/crown.svg" />
+              <span>위치</span>
+            </div>
+            <div class="sub-review-cell">
+              <span><%=ratingdata.list[k].shower%></span>
+              <img class="total-review-icon" src="icon/crown.svg" />
+              <span>샤워실 시설</span>
+            </div>
           </div>
           </div>
           <div class = "personal-review-right">
-            <span>"밥 대존맛"</span>
+            <span><%=ratingdata.list[k].comment%></span>
             <span>현역 2021.02.03</span>
         
           <div class = "personal-review-title">장점</div>
-          <div class = "personal-review-text">밥이 정말 맛있어요... 취사병과 사랑에 빠졌습니다..... 진짜 좋아요 군대에 또 오고 싶을 정도에요</div>
+          <div class = "personal-review-text"><%=ratingdata.list[k].pros%></div>
           <div class = "personal-review-title">단점</div>
-          <div class = "personal-review-text">단점 없음</div>
+          <div class = "personal-review-text"><%=ratingdata.list[k].cons%></div>
 
           <div class = "helpful-btn">
             <img src = "icon/happy.png" width="16" height="16">
-            <span>도움이 돼요  (5)</span>
+            <span>도움이 돼요  (<%=ratingdata.list[k].like_count%>)</span>
           </div>
         </div>
       </div>
@@ -146,7 +191,7 @@
             주소
           </div>
           <div class="info-text">
-            강원도 철원군 서면 자등리) 402 (금강로 7628)
+            <%=divdata.address%>
           </div>
         </div>
         <div class="info-cell">
@@ -154,7 +199,7 @@
             사단 별칭
           </div>
           <div class="info-text">
-            어쩌구 부대
+            <%=divdata.nickname%>
           </div>
         </div>
         <div class="info-cell">
@@ -162,8 +207,11 @@
             식당 번호
           </div>
           <div class="info-text">
-            백골회관 : 033-458-7540 <br>
-            삼성회관 : 033-458-5539
+            <%if(divdata.address != null){%>
+              <%=divdata.address%>
+            <%}else{%>
+            정보 없음
+              <%}%>
           </div>
         </div>
       </div>
@@ -181,12 +229,7 @@
     </div>
   </div>
 </div>
-  <div class="bottom-background" id = "community-page" style="display: none;">
-    <%- include ("community")%>
-  </div>
-  <div class="bottom-background" id = "local-page" style="display: none;">
-    <%- include ("local")%>
-  </div>
+ 
     </div>
     </div>
 
@@ -194,30 +237,4 @@
   </div>
 </body>
 
-
-
-
-<script>
-function changecategory(obj){
-
-  var pages = document.getElementsByClassName('bottom-background');
-  for(var i = 0 ; i < pages.length ; i++){
-    pages[i].style.display = "none";
-  }
-
-  var categorys = document.getElementsByClassName('category-cell');
-  for(var i = 0 ; i < categorys.length ; i++){
-    categorys[i].classList.remove("now-state");
-  }
-  obj.classList.add("now-state");
-
-if(obj.id == "category-review"){ 
-  document.getElementById('review-page').style.display = "flex";
-}else if(obj.id == "category-community"){ 
-  document.getElementById('community-page').style.display = "flex";
-}else if(obj.id == "category-local"){
-  document.getElementById('local-page').style.display = "flex";
-}
-}
-</script>
 </html>

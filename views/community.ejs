@@ -1,136 +1,183 @@
+<!-- 카테고리바 -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>김군화넷</title>
+
+  <link rel="stylesheet" type="text/css" href="Stylesheet/review.css" />
+  <link rel="stylesheet" type="text/css" href="Stylesheet/community.css" />
+  <link rel="stylesheet" type="text/css" href="Stylesheet/css_set.css" />
+
+</head>
 
 <body>
-        <div class="wrap">
-            <div class="wrap_L">
+  <%- include ("header")%>
+  <div class="content">
 
-                <div class="search">
-                    <span class="search_commu">3사단 커뮤니티</span>
+    <!-- 탑베너 -->
+    <div class="top-banner">
+      <div class="top-banner-content">
+        <img class="army-mark" src="" />
+        <div class="banner-title">
+          <span><%=divdata.name%> (<%=divdata.brigade%>)</span>
+          <div class="banner-text">
+            <img class="banner-icon" src="icon/crown.svg" />
+            <%var totalrating = (ratingdata.info.px_rating + ratingdata.info.domitory_rating + ratingdata.info.meal_rating + ratingdata.info.location_rating + ratingdata.info.shower_rating)/5%>
+            <span><%=totalrating%> (<%=ratingdata.info.review_count%>개 리뷰)</span>
+          </div>
+        </div>
+        <div class="review-btn">
+          <span>이 사단 리뷰하기</span>
+        </div>
+      </div>
+    </div>
 
-                    <input id="keyword" name="keyword" type="search" placeholder="키워드로 검색해보세요."
-                    autocomplete="off" class="inp-srch wrap-srch on">
+    <!-- 중간 카테고리 -->
+    <div class="category">
+      <div class="category-content">
+        <div id= "category-review" class="category-cell">
+          <a href = "/review?uid=1">
+          <span>리뷰</span>
+          </a>
+        </div>
+        <div id= "category-community" class="category-cell  now-state">
+          <a href = "/community?uid=1">
+          <span>커뮤니티</span>
+          </a>
+        </div>
+        <div id= "category-local" class="category-cell">
+          <a href = "/local?uid=1">
+          <span>주변생활</span>
+        </a>
+        </div>
+      </div>
+    </div>
+  <div class="bottom-background" id = "community-page">
+      <div class="wrap">
+          <div class="wrap_L">
 
-                    <button type="submit" class="army-search-btn">
-                        <img src="icon/search.png">
-                    </button>
+              <div class="search">
+                  <span class="search_commu">3사단 커뮤니티</span>
+                  <form action = "/community" method="GET">
+                  <input id="keyword" name="keyword" type="search" placeholder="키워드로 검색해보세요."
+                  autocomplete="off" class="inp-srch wrap-srch on">
+                  <input name="uid" value = "<%=ratingdata.info.uid%>" style="display:none;">
+                  <button type="submit" class="army-search-btn">
+                      <img src="icon/search.png">
+                  </button>
+                  </form>
+                  <div class="recommen_k">
+                      <span class="recomm">추천 키워드</span>
+                      <span>3사단</span>
+                      <span>휴가</span>
+                      <span>3사단 조교</span>
+                      <span>일과</span>
+                      <span>3사단</span>
+                      <span>휴가</span>
+                      <span>3사단 조교</span>
+                      <span>일과</span>
+                      <span>3사단</span>
+                      <span>휴가</span>
+                      <span>3사단 조교</span>
+                      <span>일과</span>
+                      <span>3사단</span>
+                      <span>휴가</span>
+                  </div>
+              </div>
 
-                    <div class="recommen_k">
-                        <span class="recomm">추천 키워드</span>
-                        <span>3사단</span>
-                        <span>휴가</span>
-                        <span>3사단 조교</span>
-                        <span>일과</span>
-                        <span>3사단</span>
-                        <span>휴가</span>
-                        <span>3사단 조교</span>
-                        <span>일과</span>
-                        <span>3사단</span>
-                        <span>휴가</span>
-                        <span>3사단 조교</span>
-                        <span>일과</span>
-                        <span>3사단</span>
-                        <span>휴가</span>
-                    </div>
-                </div>
+              <div class="community"> 
+                  <div>
+                    <%for(var i = 0 ; i < commudata.length ; i++){%>
+                      <div class="comm01">
+                        
+                          <span class="title"><%=commudata[i].title%></span>
 
-                <div class="community"> 
-                    <div>
-                      <%for(var i = 0 ; i < 2 ; i++){%>
-                        <div class="comm01">
+                          <p><%=commudata[i].content%>
+                          </p>
                           
-                            <span class="title">3사단 일과</span>
-
-                            <p>밥이 정말 맛있어요... 취사병과 사랑에 빠졌습니다..... 
-                                진짜 좋아요 군대에 또 오고 싶을 정도에요 밥이 정말 맛있어요... 
-                                취사병과 사랑에 빠졌습니다..... 진짜 좋아요 군대에 또 오고 싶을 정도에요</br>
-                                밥이 정말 맛있어요... 취사병과 사랑에 빠졌습니다..... 
-                                진짜 좋아요 군대에 또 오고 싶을 정도에요 밥이 정말 맛있어요... 
-                                취사병과 사랑에 빠졌습니다..... 진짜 좋아요 군대에 또 오고 싶을 정도에요
-                                밥이 정말 맛있어요... 취사병과 사랑에 빠졌습니다..... 
-                                진짜 좋아요 군대에 또 오고 싶을 정도에요밥이 정말 맛있어요... 
-                                취사병과 사랑에 빠졌습니다..... 
-                                진짜 좋아요 군대에 또 오고 싶을 정도에요.
-                            </p>
-                            
-                           <div style="display: flex;">
-                            <div class="flo">
-                              <img class="local-img02" src="icon/hospitable.png">
-                              <span>1,950</span>
-                            </div>
-                            <div class="flo">
-                              <img class="local-img02" src="icon/comment.png">
-                              <span>5</span>
-                            </div>
-                            <div class="flo">
-                              <img class="local-img02" src="icon/handclap.png">
-                              <span>6</span>
-                            </div>
+                         <div style="display: flex;">
+                          <div class="flo">
+                            <img class="local-img02" src="icon/hospitable.png">
+                            <span><%=commudata[i].show_count%></span>
+                          </div>
+                          <div class="flo">
+                            <img class="local-img02" src="icon/comment.png">
+                            <span><%=commudata[i].content_count%></span>
+                          </div>
+                          <div class="flo">
+                            <img class="local-img02" src="icon/handclap.png">
+                            <span><%=commudata[i].like_count%></span>
                           </div>
                         </div>
-              
-                    <div class = "border"></div>
-                  </div>
-                    <%}%>
+                      </div>
             
-
-            </div>
-
-            <div class="wrap_R">
-                <div class="comm_info">
-                    <div class="info01">
-                        <span class="info02">사단 정보</span>
-
-                        <table border="0">
-                            <tr>
-                                <th>주소</th>
-                                <td>강원도 철원군 서면 자등리 402 (금강로 7628)</td>
-                            </tr>
-                            <tr>
-                                <th>사단 별칭</th>
-                                <td>블라블라블라</td>
-                            </tr>
-                            <tr>
-                                <th>식당 번호</th>
-                                <td>
-                                    백골회관:033-458-7540</br>
-                                    삼성회관:033-458-5539
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+                  <div class = "border"></div>
                 </div>
+                  <%}%>
+          
 
-                <div class="comm_info2">
-                    <div class="info01">
-                        <span class="info02">관련 뉴스</span>
+          </div>
 
-                        <div>
-                            <a href="#" target="" title=""><div class="news"></div></a>
-                            <a href="#" target="" title=""><p>철원군.의회 "3사단 사령부 이전 재검토를"</p></a>
-                        </div>
-                        <div>
-                            <a href="#" target="" title=""><div class="news"></div></a>
-                            <a href="#" target="" title=""><p>철원군.의회 "3사단 사령부 이전 재검토를"</p></a>
-                        </div>
-                        <div>
-                            <a href="#" target="" title=""><div class="news"></div></a>
-                            <a href="#" target="" title=""><p>철원군.의회 "3사단 사령부 이전 재검토를"</p></a>
-                        </div>
-                        <div>
-                            <a href="#" target="" title=""><div class="news"></div></a>
-                            <a href="#" target="" title=""><p>철원군.의회 "3사단 사령부 이전 재검토를"</p></a>
-                        </div>
-                        <div>
-                            <a href="#" target="" title=""><div class="news"></div></a>
-                            <a href="#" target="" title=""><p>철원군.의회 "3사단 사령부 이전 재검토를"</p></a>
-                        </div>
-                    </div>
+          <div class="wrap_R" style="margin: 20px 0px 0px 20px;">
+            <div class="bottom-content-right">
+              <div class="text-box">
+                <span>사단 정보</span>
+                <div class="info-cell" style="margin-top: 20px;">
+                  <div class="info-title">
+                    주소
+                  </div>
+                  <div class="info-text">
+                    <%=divdata.address%>
+                  </div>
                 </div>
-
+                <div class="info-cell">
+                  <div class="info-title">
+                    사단 별칭
+                  </div>
+                  <div class="info-text">
+                    <%=divdata.nickname%>
+                  </div>
+                </div>
+                <div class="info-cell">
+                  <div class="info-title">
+                    식당 번호
+                  </div>
+                  <div class="info-text">
+                    <%if(divdata.address != null){%>
+                      <%=divdata.address%>
+                    <%}else{%>
+                    정보 없음
+                      <%}%>
+                  </div>
+                </div>
+              </div>
+                <div class="text-box" style="margin-top: 20px;">
+                  <span>관련 뉴스</span>
+                  <%for (var j = 0;j<3; j++){%>
+                  <div class="news-cell" style="margin-top: 20px;">
+                    <div class="news-img"></div>
+                    <div class="news-text">
+                      철원군.의회 “3사단 사령부 이전 재검토를"
+                    </div>
+                  </div>
+                  <%}%>
+              </div>
             </div>
-        </div>
+      </div>
 
+  </div>
+  </div>
     </div>
+    </div>
+
+
+  </div>
 </body>
+
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
 function select{

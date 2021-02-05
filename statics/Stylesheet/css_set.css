@@ -81,8 +81,11 @@ body {font-family: MalgunGothic, '맑은 고딕','돋움', Dotum, AppleGothic, S
  caption {overflow: hidden;width: 0;height: 0;font-size: 0; line-height: 0;}
  th, td { vertical-align: middle;/* white-space: nowrap */}
  a {color: #333; text-decoration: none; line-height: 1;}
- a:hover, a:focus, a:active {text-decoration: underline;}
+ a:hover, a:focus, a:active {text-decoration: none;}
  a:visited {color: #333;}
+ a:link { color: black; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: black; text-decoration: none;}
 
  *, html {box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
  *, *:before, *:after {box-sizing: border-box;-webkit-box-sizing: border-box; -moz-box-sizing: border-box;}

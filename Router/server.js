@@ -9,6 +9,7 @@ app.set('views','views'); // 정적 파일 위치 지정
 app.set('view engine','ejs'); // 템플릿 엔진 세팅
 app.use(express.static('statics'));
 
+
 //One of the routes
 router.get("/main", (req, res) => {
   fetch("http://localhost:3000/api/main/qna") 
@@ -44,29 +45,127 @@ router.get("/main/search", (req, res) => {
         console.log("err"+err);
       });
 });
-
 // localhost:3000/login
-router.get('/review/:uid',(req,res,next) => {
-  var uid = req.params.uid;
-  var type = 1 || req.query.type;
-  var status = 2 || req.query.status;
-  var url = "http://localhost:3000/api/div/info?uid="+uid;
-  fetch(url,{method: 'GET'}) 
-  .then(response => {console.log(response); return response.json();})
-  .then(divdata => {
-    console.log(divdata);
-    console.log(err);
-    var rank_url = "http://localhost:3000/api/div/rating?uid="+uid+"&type="+type+"&status="+status;
-    fetch(rank_url,{method:'GET'}) 
-    .then(response => response.body.json())
-    .then(ratingdata => {
-      return res.render("review.ejs", { divdata: divdata , ratingdata: ratingdata,});
+router.get('/review', (req, res, next) => {
+  var uid = req.query.uid;
+  var type = req.query.type;
+  var status = req.query.status;
+  var path = "http://localhost:3000/api/div/info?uid=" + uid;
+  fetch(path, {
+      method: 'GET'
+    })
+    .then(response => {
+      return response.json();
+    })
+    .then(divdata => {
+      console.log(divdata);
+      var rank_url = "http://localhost:3000/api/div/rating?uid=" + uid + "&type=" + type + "&status=" + status;
+      fetch(rank_url, {
+          method: 'GET'
+        })
+        .then(response => response.json())
+        .then(ratingdata => {
+          return res.render("review.ejs", {
+            divdata: divdata,
+            ratingdata: ratingdata
+          });
+        });
+    }).catch(err => {
+      console.log("err" + err);
     });
-  })
-  .catch(err => {
-    console.log("err"+err);
-  });
 });
+
+
+router.get('/community', (req, res, next) => {
+      var uid = req.query.uid;
+      var type = req.query.type;
+      var status = req.query.status;
+      var keyword = req.query.keyword;
+      var path = "http://localhost:3000/api/div/info?uid=" + uid;
+      fetch(path, {
+          method: 'GET'
+        })
+        .then(response => {
+          return response.json();
+        })
+        .then(divdata => {
+          console.log(divdata);
+          var rank_url = "http://localhost:3000/api/div/rating?uid=" + uid + "&type=1&status=2";
+          fetch(rank_url, {
+              method: 'GET'
+            })
+            .then(response => response.json())
+            .then(ratingdata => {
+              if(keyword != undefined){
+                console.log("keyword!@")
+              var commu_url = "http://localhost:3000/api/div/community/search?keyword="+encodeURI(keyword)+"&uid="+uid;
+              }else{
+              var commu_url = "http://localhost:3000/api/div/community?uid=" + uid + "&type=" + type;
+              }
+              fetch(commu_url, {
+                  method: 'GET'
+                })
+                .then(response => response.json())
+                .then(commudata => {
+                  console.log("commu"+commudata);
+                  return res.render("community.ejs", {
+                    divdata: divdata,
+                    ratingdata: ratingdata,
+                    commudata: commudata
+                  });
+                });
+              });
+            })
+            .catch(err => {
+              console.log("err" + err);
+            });
+        });
+
+      router.get('/local', (req, res, next) => {
+        var uid = req.query.uid;
+        var type = req.query.type;
+        var status = req.query.status;
+        var keyword = req.query.keyword;
+        var path = "http://localhost:3000/api/div/info?uid=" + uid;
+        fetch(path, {
+            method: 'GET'
+          })
+          .then(response => {
+            return response.json();
+          })
+          .then(divdata => {
+            console.log(divdata);
+
+            var rank_url = "http://localhost:3000/api/div/rating?uid=" + uid + "&type=" + type + "&status=" + status;
+            fetch(rank_url, {
+                method: 'GET'
+              })
+              .then(response => response.json())
+              .then(ratingdata => {
+                if(keyword != undefined){
+                  console.log("keyword!@")
+                var local_url = "http://localhost:3000/api/div/local/search?keyword="+encodeURI(keyword)+"&uid="+uid;
+                }else{
+                var local_url = "http://localhost:3000/api/div/local?uid=" + uid + "&type=" + type + "&status=" + status;
+                }
+                fetch(local_url, {
+                    method: 'GET'
+                  })
+                  .then(response => response.json())
+                  .then(localdata => {
+                    return res.render("local.ejs", {
+                      divdata: divdata,
+                      ratingdata: ratingdata,
+                      localdata: localdata
+                    });
+                  });
+              });
+          })
+          .catch(err => {
+            console.log("err" + err);
+          });
+      });
+
 
 // localhost:3000/login
 router.get('/community',(req,res,next) => {
@@ -76,9 +175,30 @@ router.get('/community',(req,res,next) => {
 
 // localhost:3000/login
 router.get('/qna',(req,res,next) => {
-  res.render('qna.ejs');
-  next();
-});
+  var keyword = req.query.keyword;
+  if(keyword != undefined){
+    console.log("keyword!@")
+    var path = "http://localhost:3000/api/qna/search?keyword="+encodeURI(keyword)+"&type=1";
+  }else{
+    var path = "http://localhost:3000/api/qna/list?type=1";
+  }
+ 
+  fetch(path, {
+      method: 'GET'
+    })
+    .then(response => {
+      return response.json();
+    })
+    .then(qnadata => {
+      console.log(qnadata);
+      return res.render("QnA.ejs", {
+        qnadata : qnadata,
+      });
+    })
+    .catch(err => {
+      console.log("err" + err);
+    });
+  });
 
 // localhost:3000/login
 router.get('/local',(req,res,next) => {
