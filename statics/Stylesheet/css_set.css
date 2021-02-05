@@ -87,3 +87,72 @@ body {font-family: MalgunGothic, '맑은 고딕','돋움', Dotum, AppleGothic, S
  *, html {box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
  *, *:before, *:after {box-sizing: border-box;-webkit-box-sizing: border-box; -moz-box-sizing: border-box;}
 
+
+ /* header.css */
+ header {font-family: NanumSquare; 
+	font-style: normal;
+	font-weight: 800;
+	font-size: 22px;
+	line-height: 18px;
+
+	display: flex;
+	align-items: center;
+	letter-spacing: -2px;
+
+	color: #000000;}
+header {height:88px; border-bottom:1px solid #145A04; background:#fff;}
+.wrap {width:1110px; margin:0 auto;}
+
+h1 {
+float:left;
+padding:15px 60px 0 0;
+clear:both;
+}
+h1 span {
+color:#145A04; 
+font-weight:bold;
+font-size:30px;
+}
+h1 a { 
+text-decoration:none; 
+}
+.menu01 {
+float:left; 
+list-style:none;
+}
+.menu01 li {            
+float:left; 
+padding: 33px 20px;
+}
+.menu01 li:hover {border-bottom:3px solid #145A04;}
+.menu01 a { 
+color:#000;
+text-decoration:none;
+font-weight:bold;
+}
+.menu01 a:hover { color:#145A04; }
+.topbtn {
+float:right;
+}
+#btnLogin a {
+background:#fff;
+color:#145A04;
+padding:15px 20px;
+}
+#btnJoin a {
+background:#145A04;
+color:#fff;
+padding:15px 20px;
+}
+#btnLogin {
+margin:auto;
+border:none; 
+background-color:#fff;
+margin-top:35x;
+}
+#btnJoin {
+margin:auto;
+border:none; 
+background-color:#145A04;
+margin-top:35px;
+}

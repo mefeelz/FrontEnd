@@ -33,8 +33,8 @@ router.get('/community',(req,res,next) => {
 });
 
 // localhost:3000/login
-router.get('/QnA',(req,res,next) => {
-  res.render('QnA.ejs');
+router.get('/qna',(req,res,next) => {
+  res.render('qna.ejs');
   next();
 });
 
