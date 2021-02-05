@@ -29,7 +29,7 @@
                                     <div class="banner-title">
                                         <span>3사단(18,22,23,포병 여단)</span>
                                         <div class="banner-text">
-                                            <img class="banner-icon" src="icon/crown.svg" />
+                                            <img class="banner-icon src="icon/crown.svg" />
                                             <span>4.0 (128개 리뷰)</span>
                                         </div>
                                     </div>
@@ -41,66 +41,66 @@
                     <div class="border"></div>
                    
                     <div>
+                        <form action ="http://localhost:3000/api/div/rating" method="POST" id = "dataform" >
+                            <input type = "number" name = "div_uid" value="1" style="display: none;">
                         <div class="comm01">
                             <span class="title2 m_bott">사단 평가하기</span>
 
                             <div>
                                 <span class="total">총점</span>
-
-                                <img class="banner-icon2" src="icon/Vector 9.1.png" />
-                                <img class="banner-icon2" src="icon/Vector 9.1.png" />
-                                <img class="banner-icon2" src="icon/Vector 9.1.png" />
-                                <img class="banner-icon2" src="icon/Vector 9.1.png" />
-                                <img class="banner-icon2" src="icon/Vector 9.1.png" />
+                                <input type = "number" id = "rating"name = "rating" style="display: none;">
+                                <img class="banner-icon3 banner-icon2 rating" src="icon/Vector 9.1.png" onclick="givescore('rating',0)" />
+                                <img class="banner-icon3 banner-icon2 rating" src="icon/Vector 9.1.png" onclick="givescore('rating',1)"/>
+                                <img class="banner-icon3 banner-icon2 rating" src="icon/Vector 9.1.png" onclick="givescore('rating',2)"/>
+                                <img class="banner-icon3 banner-icon2 rating" src="icon/Vector 9.1.png" onclick="givescore('rating',3)"/>
+                                <img class="banner-icon3 banner-icon2 rating" src="icon/Vector 9.1.png" onclick="givescore('rating',4)"/>
                             </div>
 
                             <div class="grade_area">
                                 <div class="grade01">
                                     <span>생활관 시설</span>
-                                    
-                                    <p id="star_grade">
-                                        <a href="#">★</a>
-                                        <a href="#">★</a>
-                                        <a href="#">★</a>
-                                        <a href="#">★</a>
-                                        <a href="#">★</a>
-                                    </p>
+                                    <input type = "number" id = "domitory_rating" name = "domitory_rating" style="display: none;">
+                                    <img  src="icon/Vector 9.1.png"  class = 'banner-icon3 domitory_rating' onclick="givescore('domitory_rating',0)"/>
+                                    <img  src="icon/Vector 9.1.png"  class = 'banner-icon3 domitory_rating' onclick="givescore('domitory_rating',1)"/>
+                                    <img  src="icon/Vector 9.1.png"  class = 'banner-icon3 domitory_rating' onclick="givescore('domitory_rating',2)"/>
+                                    <img  src="icon/Vector 9.1.png"  class = 'banner-icon3 domitory_rating' onclick="givescore('domitory_rating',3)"/>
+                                    <img  src="icon/Vector 9.1.png"  class = 'banner-icon3 domitory_rating' onclick="givescore('domitory_rating',4)"/>
                                 </div>
                                 <div class="grade02">
                                     <span>샤워 시설</span>
-                                    
-                                    <img src="icon/Vector 9.1.png" />
-                                    <img src="icon/Vector 9.1.png" />
-                                    <img src="icon/Vector 9.1.png" />
-                                    <img src="icon/Vector 9.1.png" />
-                                    <img src="icon/Vector 9.1.png" />
+                                    <input type = "number" id = "shower_rating" name = "shower_rating"style="display: none;">
+                                    <img src="icon/Vector 9.1.png"  class = 'banner-icon3 shower_rating' onclick="givescore('shower_rating',0)"/>
+                                    <img src="icon/Vector 9.1.png"  class = 'banner-icon3 shower_rating' onclick="givescore('shower_rating',1)"/>
+                                    <img src="icon/Vector 9.1.png"  class = 'banner-icon3 shower_rating' onclick="givescore('shower_rating',2)"/>
+                                    <img src="icon/Vector 9.1.png"  class = 'banner-icon3 shower_rating' onclick="givescore('shower_rating',3)"/>
+                                    <img src="icon/Vector 9.1.png"  class = 'banner-icon3 shower_rating' onclick="givescore('shower_rating',4)"/>
                                 </div>
                                 <div class="grade03">
                                     <span>식당</span>
-                                    
-                                    <img src="icon/Vector 9.1.png" />
-                                    <img src="icon/Vector 9.1.png" />
-                                    <img src="icon/Vector 9.1.png" />
-                                    <img src="icon/Vector 9.1.png" />
-                                    <img src="icon/Vector 9.1.png" />
+                                    <input type = "number" id = "meal_rating" name = "meal_rating" style="display: none;">
+                                    <img src="icon/Vector 9.1.png"  class = 'banner-icon3 meal_rating' onclick="givescore('meal_rating',0)"/>
+                                    <img src="icon/Vector 9.1.png"  class = 'banner-icon3 meal_rating' onclick="givescore('meal_rating',1)"/>
+                                    <img src="icon/Vector 9.1.png"  class = 'banner-icon3 meal_rating' onclick="givescore('meal_rating',2)"/>
+                                    <img src="icon/Vector 9.1.png"  class = 'banner-icon3 meal_rating' onclick="givescore('meal_rating',3)"/>
+                                    <img src="icon/Vector 9.1.png"  class = 'banner-icon3 meal_rating' onclick="givescore('meal_rating',4)"/>
                                 </div>
                                 <div class="grade04">
                                     <span>PX</span>
-                                    
-                                    <img src="icon/Vector 9.1.png" />
-                                    <img src="icon/Vector 9.1.png" />
-                                    <img src="icon/Vector 9.1.png" />
-                                    <img src="icon/Vector 9.1.png" />
-                                    <img src="icon/Vector 9.1.png" />
+                                    <input type = "number" id = "px_rating" name = "px_rating" style="display: none;">
+                                    <img src="icon/Vector 9.1.png"  class = 'banner-icon3 px_rating' onclick="givescore('px_rating',0)"/>
+                                    <img src="icon/Vector 9.1.png"  class = 'banner-icon3 px_rating' onclick="givescore('px_rating',1)"/>
+                                    <img src="icon/Vector 9.1.png"  class = 'banner-icon3 px_rating' onclick="givescore('px_rating',2)"/>
+                                    <img src="icon/Vector 9.1.png"  class = 'banner-icon3 px_rating' onclick="givescore('px_rating',3)"/>
+                                    <img src="icon/Vector 9.1.png"  class = 'banner-icon3 px_rating' onclick="givescore('px_rating',4)"/>
                                 </div>
                                 <div class="grade05">
                                     <span>부대 위치</span>
-                                    
-                                    <img src="icon/Vector 9.1.png" />
-                                    <img src="icon/Vector 9.1.png" />
-                                    <img src="icon/Vector 9.1.png" />
-                                    <img src="icon/Vector 9.1.png" />
-                                    <img src="icon/Vector 9.1.png" />
+                                    <input type = "number" id = "location_rating"" name = "location_rating" style="display: none;">
+                                    <img src="icon/Vector 9.1.png"  class = "banner-icon3 location_rating" onclick="givescore('location_rating',0)"/>
+                                    <img src="icon/Vector 9.1.png"  class = "banner-icon3 location_rating" onclick="givescore('location_rating',1)"/>
+                                    <img src="icon/Vector 9.1.png"  class = "banner-icon3 location_rating" onclick="givescore('location_rating',2)"/>
+                                    <img src="icon/Vector 9.1.png"  class = "banner-icon3 location_rating" onclick="givescore('location_rating',3)"/>
+                                    <img src="icon/Vector 9.1.png"  class = "banner-icon3 location_rating" onclick="givescore('location_rating',4)"/>
                                 </div>                                
                             </div>
 
@@ -113,31 +113,39 @@
                             <span class="title2 m_bott">리뷰 작성하기</span>
 
                             <div>
-                                <form>
 
                                     <div>
-                                        <span class="th01">총점</span>
+                                        <span class="th01">한줄 총평</span>
                                         <span class="box01">
-                                            <input type="text" id="id" class="int" maxlength="20" placeholder="예 : PX 짱 넓음">
+                                            <input type="text" name = "comment" id="id" class="int" maxlength="20" placeholder="예 : PX 짱 넓음">
                                         </span>
                                     </div>
                                     <div>
                                         <span class="th01">장점</span>
                                         <span>
-                                            <div class="box02">
-                                                <%- include ("summernote")%>
-                                            </div>
+                                            <span class="box01" style="height: 120px;">
+                                                <input type="text"  name = "pros" id="id" class="int" maxlength="30" placeholder="3사단 (18, 22, 23, 포병 여단)에서 가장 좋았던 점은 무엇인가요?">
+                                            </span>
                                         </span>
                                     </div>
                                     <div>
                                         <span class="th01">단점</span>
                                         <span>
-                                            <div class="box02">
-                                                <%- include ("summernote")%>
-                                            </div>
+                                            <span class="box01" style="height: 120px;">
+                                                <input type="text"  name = "cons" id="id" class="int" maxlength="30" placeholder="3사단 (18, 22, 23, 포병 여단)에서 가장 힘들었던 점은 무엇인가요?">
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="th01">마음의 편지</span>
+                                        <span>
+                                            <span class="box01" style="height: 120px;">
+                                                <input type="text"  name = "content" id="id" class="int" maxlength="30" placeholder="3사단 (18, 22, 23, 포병 여단)에서 가장 힘들었던 점은 무엇인가요?">
+                                            </span>
                                         </span>
                                     </div>
 
+                                    <button type="button" onclick="formsubmit()" class = "submit-btn">리뷰저장</button>
                                 </form>
                             </div>
 
@@ -175,6 +183,7 @@
 
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script>
     function more(obj){
         var moreinfo = document.getElementById('more-info');
@@ -186,5 +195,38 @@
             moreinfo.style.display = 'none'
             obj.value = '더보기';
         }
+    }
+
+    function givescore(name, number){
+        var obj = document.getElementById(name);
+        obj.value = number;
+
+        var stars = document.getElementsByClassName(name);
+
+        for(var i = 0; i<=number;i++){
+            stars[i].src = "icon/crown.svg"
+        }
+        for(var i = number+1; i<=4;i++){
+            stars[i].src = "icon/Vector 9.1.png"
+        }
+    }
+
+    function formsubmit(){
+         // Get form
+         var form = $('#dataform')[0];
+    // Create an FormData object 
+    var data = new FormData(form);
+
+        $.ajax({
+            processData: false,
+            contentType: false,
+          url: "http://localhost:3000/api/div/rating",
+          type: 'POST',
+          contentType: 'application/json',
+          headers: {
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFhYUBhYWEuY29tIiwiaWF0IjoxNjEyNTMxNzY1LCJleHAiOjE2MTI1NzQ5NjV9.lEbyusskkOagxeYrqgjHzkfveCWQNcZn-AAYGMccReA"
+                 },
+        data:data}
+    )
     }
 </script>

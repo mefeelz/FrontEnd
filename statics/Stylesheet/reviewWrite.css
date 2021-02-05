@@ -296,7 +296,9 @@ body {
   }
 
 .banner-icon2 { margin:12px 0 20px; }
-
+.banner-icon3 { 
+    width :30px !important;
+height: 20px !important;}
 .grade_area { border-left: 1px solid #BDBDBD;  padding-left:20px; }
 
 .grade_area span { 
@@ -325,7 +327,33 @@ body {
 }
 
 .box01 input { width:680px; height:48px; border:1px solid #BDBDBD; margin:8px 0 20px; }
+.submit-btn{
+    flex-direction: row;
+align-items: center;
+padding: 28px 121px;
 
+width: 330px;
+height: 74px;
+
+top: calc(50% - 74px/2 + 791px);
+margin-bottom: 0px;
+background: #0A0A0A;
+font-family: NanumSquare;
+font-style: normal;
+font-weight: 800;
+font-size: 24px;
+line-height: 18px;
+/* identical to box height, or 75% */
+
+display: flex;
+align-items: center;
+text-align: center;
+
+/* Light / White */
+
+color: #FFFFFF;
+
+}
 
 /* 별점주기
 #star_grade a{
