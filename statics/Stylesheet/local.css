@@ -313,7 +313,7 @@ object-fit: cover;
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
+  padding-top: 20px;
   border: 1px solid #888;
   width: 680px; /* Could be more or less, depending on screen size */                          
 }
@@ -336,9 +336,38 @@ object-fit: cover;
   font-weight: 800;
   font-size: 24px;
   line-height: 18px;
-  margin:30px 30px 18px;
+  margin:30px 30px 18px 50px;
 }
 
-.pop_box01 select { width:600px; border:2px solid #C4C4C4; }
+.pop_box01 select { width:570px; border:2px solid #C4C4C4; margin-left:50px; }
 
-.pop_box01 input { width:600px; border:2px solid #C4C4C4; }
+.pop_box01 input { width:570px; height:40px; border:2px solid #C4C4C4; margin:7px 0 0 50px; }
+
+.join_title { margin:15px 0 0 50px;
+  font-family: NanumSquare;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.pop_footer {background:#f2f2f2; width:100%; height:52px; margin-top:50px;}
+
+#pop_btnJoin { font-family: NanumSquare;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 18px;
+  margin:30px 30px 18px 50px;
+  float:right;
+  position:relative; top:-62px;
+}
+
+#myBtn { width:330px; height:74px; color:#fff; background:#000; margin-top:20px;font-family: NanumSquare;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 18px;
+}
+
+.close { margin-right:20px; }

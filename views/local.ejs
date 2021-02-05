@@ -247,8 +247,52 @@
               <div>                
                 <h3 class="join_title"><label for="phoneNo">주소</label></h3>
                 <span class="pop_box01">
-                  <input type="text" name="" class="postcodify_address" value=""  placeholder="주소를 입력해주세요." /><br />	
+                  <input type="text" name="" class="postcodify_address" value=""  placeholder="주소를 입력해주세요." />
                 </span>	
+              </div>
+
+              <!-- 가격 -->
+              <div>
+                <h3 class="join_title"><label for="name">가격</label></h3>
+                <span class="pop_box01">
+                  <input type="text" id="name" class="int" maxlength="20"  placeholder="음식 별 가격을 입력해주세요.">
+                </span>
+              </div>
+
+              <!-- 전화번호 -->
+              <div>
+                <h3 class="join_title"><label for="phoneNo">전화번호</label></h3>
+                <span class="pop_box01">
+                  <input type="tel" id="mobile" class="int" maxlength="16" placeholder="전화번호를 입력해주세요.">
+                </span>
+                <span class="error_next_box"></span>    
+              </div>
+
+              <!-- 상세정보 -->
+              <div>                
+                <h3 class="join_title"><label for="phoneNo">상세정보</label></h3>
+                <span class="pop_box01">
+                  <input type="text" name="" class="postcodify_details" value=""  placeholder="상세정보를 입력해주세요."/>
+                </span>		
+              </div>
+
+              <!-- BIRTH_DD -->
+              <div id="bir_dd">
+                <h3 class="join_title"><label for="phoneNo">선임 또는 간부에게 소개해주시겠습니까?</label></h3>
+                <span class="pop_box01">
+                  <input type="text" id="dd" class="int" maxlength="2" placeholder="후기를 공유해주세요.">
+                </span>
+              </div>
+
+              <!-- 하단 -->
+              <div class="pop_footer">
+                <img src="icon/photo.png"/>
+                <!-- 등록 btn -->
+                <div class="pop_btn_area">
+                  <button type="button" id="pop_btnJoin">
+                    <span>등록</span>
+                  </button>
+                </div>
               </div>
 
             </form>
