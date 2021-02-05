@@ -86,6 +86,12 @@ router.get('/local',(req,res,next) => {
   next();
 });
 
+// localhost:3000/login
+router.get('/reviewWrite',(req,res,next) => {
+  res.render('reviewWrite.ejs');
+  next();
+});
+
 app.use('/',router);
 
 app.listen(port,() => console.log('Example app listening at http://localhost:'+port))
