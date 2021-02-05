@@ -21,7 +21,7 @@
     <!-- 탑베너 -->
     <div class="top-banner">
       <div class="top-banner-content">
-        <img class="army-mark" src="" />
+        <img class="army-mark" src="icon/img/3.jpg" />
         <div class="banner-title">
           <span><%=divdata.name%> (<%=divdata.brigade%>)</span>
           <div class="banner-text">
@@ -63,12 +63,14 @@
               <div class="search">
                   <span class="search_commu">3사단 커뮤니티</span>
                   <form action = "/community" method="GET">
+                  <div style="position: relative;">
                   <input id="keyword" name="keyword" type="search" placeholder="키워드로 검색해보세요."
                   autocomplete="off" class="inp-srch wrap-srch on">
                   <input name="uid" value = "<%=ratingdata.info.uid%>" style="display:none;">
                   <button type="submit" class="army-search-btn">
                       <img src="icon/search.png">
                   </button>
+                  </div>
                   </form>
                   <div class="recommen_k">
                       <span class="recomm">추천 키워드</span>
@@ -147,24 +149,31 @@
                     식당 번호
                   </div>
                   <div class="info-text">
-                    <%if(divdata.address != null){%>
-                      <%=divdata.address%>
-                    <%}else{%>
-                    정보 없음
-                      <%}%>
+                    백골회관 : 033-458-7540<br>
+                    삼성회관 : 033-458-5539
                   </div>
                 </div>
               </div>
                 <div class="text-box" style="margin-top: 20px;">
                   <span>관련 뉴스</span>
-                  <%for (var j = 0;j<3; j++){%>
                   <div class="news-cell" style="margin-top: 20px;">
-                    <div class="news-img"></div>
+                    <img class="news-img" src = "icon/news/news.jpg" />
                     <div class="news-text">
                       철원군.의회 “3사단 사령부 이전 재검토를"
                     </div>
                   </div>
-                  <%}%>
+                  <div class="news-cell" style="margin-top: 20px;">
+                    <img class="news-img" src = "icon/news/news2.jpg" />
+                    <div class="news-text">
+                      국가안보 희생을 지역 소멸로 되갚나’…철원군 3사단 존치 호소
+                    </div>
+                  </div>
+                  <div class="news-cell" style="margin-top: 20px;">
+                    <img class="news-img" src = "icon/news/news3.jpg" />
+                    <div class="news-text">
+                      육군 3사단, 철원·포천 일대서 18일부터 혹한기 훈련
+                    </div>
+                  </div>
               </div>
             </div>
       </div>

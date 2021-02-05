@@ -160,6 +160,13 @@ justify-content: center;
   margin-top: 20px;
 }
 
+.army-search-btn{
+  position: absolute;
+  width: 51.67px;
+  height: 52px;
+  right: 48px;
+  top: 44px;
+}
 .bottom-content-left{
   width: 760px;
   margin-right:20px;

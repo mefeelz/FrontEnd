@@ -100,13 +100,13 @@ body {
 }
 .search input {
     border:2px solid black;
-    width: 630px;
+    width: calc(100% - 86px);
     height: 60px;
     margin:40px 0 0 40px;
     color:#ccc;
     font-size:17px;
 } 
-.search button { margin:10px 0 0 7px;}
+
 .recommen_k {
     width:680px;
     font-family: NanumSquare;
