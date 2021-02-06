@@ -344,3 +344,16 @@ color: #000000;
   position:relative; top:-62px;
 }
 
+.btn_photo img { width:70px; }
+.btn_clip img { width:45px; margin-left:7px; }
+.btn_shap img { width:45px; }
+
+.summernote { font-family: NanumSquare;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    
+    color: #eee;
+}
+.summernote span {color:#2F80ED;}
