@@ -104,7 +104,8 @@
             </div>
             <%for(var i = 0; i < localdata.length; i ++){%>
             <div>
-              <div class="comm01">
+              <div class="comm01" style="position:relative;">
+                <img src="icon/3dot.png" onclick = "inquiry();" class = "inquiry">
                 <div style="display: flex;">
                   <span class="title"><%=localdata[i].name%></span>
                   <span class="hashtag">#<%=localdata[i].type%></span>
@@ -216,14 +217,14 @@
           <div class="pop_wrap">
             <p class="pop_h">주변생활</p>
 
-            <form>
-
+            <form id = "localform" method = "POST">
+              <input name = "div_uid" value = "1" style="display: none;"/>
               <div>
                 <h3 class="join_title">
                   <label for="id">카테고리</label>
                 </h3>
                 <span class="pop_box01">
-                  <select id="mm" class="sel">
+                  <select id="mm" name = "type" class="sel">
                     <option>카페고리를 선택해주세요.</option>
                     <option value="01">식당</option>
                     <option value="02">숙박</option>
@@ -239,7 +240,7 @@
                   <label for="id">상호명</label>
                 </h3>
                 <span class="pop_box01">
-                  <input type="text" id="id" class="int" maxlength="20" placeholder="상호명을 입력해주세요.">
+                  <input type="text" name = "name" id="id" class="int" maxlength="20" placeholder="상호명을 입력해주세요.">
                 </span>
               </div>
 
@@ -247,7 +248,7 @@
               <div>                
                 <h3 class="join_title"><label for="phoneNo">주소</label></h3>
                 <span class="pop_box01">
-                  <input type="text" name="" class="postcodify_address" value=""  placeholder="주소를 입력해주세요." />
+                  <input type="text" name="address" class="postcodify_address" value=""  placeholder="주소를 입력해주세요." />
                 </span>	
               </div>
 
@@ -255,7 +256,7 @@
               <div>
                 <h3 class="join_title"><label for="name">가격</label></h3>
                 <span class="pop_box01">
-                  <input type="text" id="name" class="int" maxlength="20"  placeholder="음식 별 가격을 입력해주세요.">
+                  <input type="text" name="price" id="name" class="int" maxlength="20"  placeholder="음식 별 가격을 입력해주세요.">
                 </span>
               </div>
 
@@ -263,7 +264,7 @@
               <div>
                 <h3 class="join_title"><label for="phoneNo">전화번호</label></h3>
                 <span class="pop_box01">
-                  <input type="tel" id="mobile" class="int" maxlength="16" placeholder="전화번호를 입력해주세요.">
+                  <input type="tel" id="mobile" name = "phone_number"class="int" maxlength="16" placeholder="전화번호를 입력해주세요.">
                 </span>
                 <span class="error_next_box"></span>    
               </div>
@@ -272,15 +273,15 @@
               <div>                
                 <h3 class="join_title"><label for="phoneNo">상세정보</label></h3>
                 <span class="pop_box01">
-                  <input type="text" name="" class="postcodify_details" value=""  placeholder="상세정보를 입력해주세요."/>
+                  <input type="text" name="information" class="postcodify_details" value=""  placeholder="상세정보를 입력해주세요."/>
                 </span>		
               </div>
 
               <!-- BIRTH_DD -->
               <div id="bir_dd">
-                <h3 class="join_title"><label for="phoneNo">선임 또는 간부에게 소개해주시겠습니까?</label></h3>
+                <h3 class="join_title"><label for="comment">선임 또는 간부에게 소개해주시겠습니까?</label></h3>
                 <span class="pop_box01">
-                  <input type="text" id="dd" class="int" maxlength="2" placeholder="후기를 공유해주세요.">
+                  <input type="text" id="comment" name = "content" class="int" maxlength="2" placeholder="후기를 공유해주세요.">
                 </span>
               </div>
 
@@ -289,7 +290,7 @@
                 <img src="icon/photo.png"/>
                 <!-- 등록 btn -->
                 <div class="pop_btn_area">
-                  <button type="button" id="pop_btnJoin">
+                  <button type="button" onclick="submitform();" id="pop_btnJoin">
                     <span>등록</span>
                   </button>
                 </div>
@@ -323,10 +324,29 @@
 
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <script>
-function select{
-  axios.get('').then
+function inquiry(){
+  confirm("신고 : 정말 마음의 편지를 보내시겠습니까?");
 }
+function submitform(){
+         // Get form
+         var form = $('#localform')[0];
+    // Create an FormData object 
+    var data = new FormData(form);
+
+        $.ajax({
+            processData: false,
+            contentType: false,
+          url: "http://localhost:3000/api/div/local",
+          type: 'POST',
+          contentType: 'application/json',
+          headers: {
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFhYUBhYWEuY29tIiwiaWF0IjoxNjEyNTMxNzY1LCJleHAiOjE2MTI1NzQ5NjV9.lEbyusskkOagxeYrqgjHzkfveCWQNcZn-AAYGMccReA"
+                 },
+        data:data}
+    )
+    }
 </script>
 
 
