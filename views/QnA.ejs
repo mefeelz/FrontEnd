@@ -8,13 +8,6 @@
 
     <link rel = "stylesheet" type="text/css" href = "Stylesheet/QnA.css"/>
     <link rel = "stylesheet" type="text/css" href = "Stylesheet/css_set.css"/>
-
-    <script src="/js/summernote/summernote-lite.js"></script>
-    <script src="/js/summernote/lang/summernote-ko-KR.js"></script>
-
-    <link rel="stylesheet" href="/css/summernote/summernote-lite.css">
-
-
   </head>
 
 <body>
@@ -151,9 +144,9 @@
                                 <label for="id">질문</label>
                                 </h3>
                                 <span class="pop_box01">
-                                    <!--<%- include ("summernote")%>  -->
+                              
                                     <form method="post">
-                                        <textarea id="summernote" name="editordata"></textarea>
+                                        <%- include ("summernote")%> 
                                     </form>                      
                                 </span>
                             </div>

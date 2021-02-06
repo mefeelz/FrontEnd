@@ -85,11 +85,14 @@ bottom: 0px;
 background: #0A0A0A;
 
 }
+
 .inquiry{
   position: absolute;
-  top:24px;
-  right: 24px;
+  top:0px;
+  right: 0px;
 }
+
+
 .review-btn>a>span{
   color: #FFF;
 font-family: NanumSquare;
