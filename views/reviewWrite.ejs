@@ -169,7 +169,7 @@
                                         <div class = "img-preview-box">
                                          <img id = "preview-icon" class = "preview" src = "icon/certificate.png" width ="20" height="20"/>
                                         </div>
-                                        <input type = "file" name = "image" style="margin-top: 8px;"/>
+                                        <!-- <input type = "file" name = "image" style="margin-top: 8px;"/> -->
                                     </div>
                                 </div>
                                 <div class = "flex-btn-zone">
@@ -245,18 +245,32 @@
          // Get form
          var form = $('#dataform')[0];
     // Create an FormData object 
-    var data = new FormData(form);
-
+        var data = new FormData(form);
+        var object = {};
+        data.forEach(function(value, key){
+        object[key] = value;
+        });
+        var jsonfile = JSON.stringify(object);
+        console.log(jsonfile);
         $.ajax({
             processData: false,
             contentType: false,
           url: "http://localhost:3000/api/div/rating",
           type: 'POST',
-          contentType: 'application/json',
           headers: {
-                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFhYUBhYWEuY29tIiwiaWF0IjoxNjEyNTMxNzY1LCJleHAiOjE2MTI1NzQ5NjV9.lEbyusskkOagxeYrqgjHzkfveCWQNcZn-AAYGMccReA"
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtoanlqMTI1QGdtYWlsLmNvbSIsImlhdCI6MTYxMjU1ODQ0NywiZXhwIjoxNjEyNjAxNjQ3fQ.ALuwPHZLSd7E6h7__8i8nAZKV9tKyws7x4RatF76tf0"
                  },
-        data:data}
+        dataType:"json",
+        contentType: 'application/json',
+        data:jsonfile,
+        success: function(result){
+            console.log("result"+result);
+            alert("리뷰가 등록되었습니다! 등록하신 리뷰는 관리자의 자대 인증 승인 후 업로드 됩니다.");
+        },
+        error:function(e){
+            console.log("err"+e);
+        }
+    }
     )
     }
 
