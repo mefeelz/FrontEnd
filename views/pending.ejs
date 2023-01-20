@@ -27,24 +27,22 @@
                 <thead>
                     <tr>
                         <th>id</th>
-                        <th>이름</th>
-                        <th>태어난 년도</th>
-                        <th>성별</th>
-                        <th>직업</th>
-                        <th>가입일</th>
-                        <th>상태</th>
+                        <th>유형</th>
+                        <th>승인 운영진</th>
+                        <th>승인</th>
+                        <th>거절 이유</th>
+                        <th>생성일</th>
                     </tr>
                 </thead>
                 <tbody>
-                  <%for (var i = 0; i < user.length; i++){%>
-                      <tr onclick="location.href='/user/<%=user[i].id%>'">
-                          <td><%=user[i].id%></td>
-                          <td><%=user[i].name%></td>
-                          <td><%=user[i].age%></td>
-                          <td><%=user[i].gender%></td>
-                          <td><%=user[i].jobName%></td>
-                          <td><%=user[i].createdAt%></td>
-                          <td><%=user[i].joinStatus%></td>
+                  <%for (var i = 0; i < pending.length; i++){%>
+                      <tr onclick="location.href='/user/<%=pending[i].memberId%>'">
+                          <td><%=pending[i].id%></td>
+                          <td><%=pending[i].type%></td>
+                          <td><%=pending[i].adminId%></td>
+                          <td><%=pending[i].isAccepted%></td>
+                          <td><%=pending[i].reason%></td>
+                          <td><%=pending[i].createdAt%></td>
                       </tr>
                     <%}%>
                   </tbody>
